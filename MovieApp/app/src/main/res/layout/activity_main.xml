@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/third_background"
     tools:context=".activity.MainActivity">
 
 
@@ -25,7 +25,7 @@
         android:background="@android:color/transparent"
         android:elevation="0dp"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
-        app:itemBackground="@color/background"
+        app:itemBackground="#141414"
         app:itemIconTint="@color/grey_400"
         app:itemPaddingBottom="-5dp"
         app:itemTextColor="@color/slate_200"

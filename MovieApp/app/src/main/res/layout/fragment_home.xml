@@ -34,7 +34,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:padding="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -134,7 +133,7 @@
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <LinearLayout
-                    android:id="@+id/playBtn"
+                    android:id="@+id/lnlPLayButton"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
@@ -151,6 +150,7 @@
                     app:layout_constraintVertical_bias="0.551">
 
                     <ImageView
+                        android:id="@+id/imvPlayIcon"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginEnd="8dp"
@@ -164,7 +164,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/play"
                         android:textColor="@color/white"
-                        android:textFontWeight="600"
+                        android:fontFamily="@font/poppins_semibold"
                         android:textSize="18sp" />
                 </LinearLayout>
 

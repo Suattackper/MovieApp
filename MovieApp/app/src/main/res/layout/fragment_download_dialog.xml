@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardBackgroundColor="@color/gray_200"
+        app:cardBackgroundColor="@color/gray_500"
         app:cardCornerRadius="35dp"
         app:cardElevation="1dp">
 
@@ -32,7 +32,7 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:text="@string/download"
                 android:textAlignment="center"
-                android:textColor="@color/third_background"
+                android:textColor="@color/slate_200"
                 android:textSize="25sp" />
 
             <TextView
@@ -43,7 +43,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:text="@string/download_desc"
                 android:textAlignment="center"
-                android:textColor="@color/third_background"
+                android:textColor="@color/slate_200"
                 android:textSize="16sp" />
 
             <View
@@ -71,7 +71,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:fontFamily="@font/poppins_semibold"
-                        android:textColor="@color/third_background"
+                        android:textColor="@color/slate_200"
                         tools:text="470 / 1000 MB" />
 
                     <TextView

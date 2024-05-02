@@ -58,7 +58,7 @@
 
     <string name="log_out">Log Out</string>
     <string name="confirm_log_out">Confirm Logout</string>
-    <string name="logout_desc">Are you sure you want to logout</string>
+    <string name="logout_desc">Are you sure you want to change password</string>
     <string name="yes">Yes</string>
     <string name="cancel">Cancel</string>
 
@@ -109,7 +109,7 @@
 
     <string name="delete">Delete</string>
     <string name="delete_message">Are you sure you want to delete this download?</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="year">2020</string>
+    <string name="time">2h 26m</string>
 </resources>
