@@ -4,11 +4,19 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.movieapp.R;
+import com.example.movieapp.databinding.FragmentMovieDetailBinding;
+import com.example.movieapp.databinding.FragmentMoviePlayingBinding;
+import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.MediaItem;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.ui.PlayerView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,7 +24,8 @@ import com.example.movieapp.R;
  * create an instance of this fragment.
  */
 public class MoviePlayingFragment extends Fragment {
-
+    FragmentMoviePlayingBinding binding;
+    private ExoPlayer player;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,6 +70,53 @@ public class MoviePlayingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie_playing, container, false);
+        binding = FragmentMoviePlayingBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+        // Lấy dữ liệu từ Bundle
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            String m3u8 = bundle.getString("m3u8");
+            Log.e("ExoPlayerm3u8", m3u8);
+            try{
+                // Tìm và tham chiếu đến PlayerView trong layout
+//                playerView = findViewById(R.id.pvVideoPlaying);
+//                binding.pvVideoPlaying
+
+                // Tạo một ExoPlayer instance
+                player = new SimpleExoPlayer.Builder(requireContext()).build();
+
+                // Thiết lập Player cho PlayerView
+                binding.pvVideoPlaying.setPlayer(player);
+
+                // Tạo một MediaItem từ URL của video
+                MediaItem mediaItem = MediaItem.fromUri(m3u8);
+
+                // Đặt MediaItem cho ExoPlayer instance
+                player.setMediaItem(mediaItem);
+
+                // Chuẩn bị ExoPlayer
+                player.prepare();
+
+                // Bắt đầu phát video
+                player.play();
+            }
+            catch (Exception e){
+                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("ExoPlayer", e.getMessage());
+            }
+        }
+        return view;
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        releasePlayer();
+    }
+
+    private void releasePlayer() {
+        if (player != null) {
+            player.release();
+            player = null;
+        }
     }
 }

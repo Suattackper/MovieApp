@@ -39,9 +39,6 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
   public final ImageView btnShare;
 
   @NonNull
-  public final LinearLayout btnStar;
-
-  @NonNull
   public final NestedScrollView contentLayout;
 
   @NonNull
@@ -57,10 +54,10 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
   public final ImageView imvBackDrop;
 
   @NonNull
-  public final RecyclerView rcvGenreMovieMore;
+  public final LinearLayout layoutsingle;
 
   @NonNull
-  public final RecyclerView rcvViewCastMore;
+  public final RecyclerView rcvDanhSachTap;
 
   @NonNull
   public final TabLayout tabLayoutMore;
@@ -75,6 +72,15 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
   public final ConstraintLayout toolbar;
 
   @NonNull
+  public final TextView tvActor;
+
+  @NonNull
+  public final TextView tvDanhSachTap;
+
+  @NonNull
+  public final TextView tvDirector;
+
+  @NonNull
   public final TextView tvGenreMovie;
 
   @NonNull
@@ -87,44 +93,42 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
   public final TextView tvTypeMovie;
 
   @NonNull
-  public final TextView tvVoteAverage;
-
-  @NonNull
   public final ViewPager2 viewPager;
 
   private FragmentMovieDetailBinding(@NonNull ConstraintLayout rootView,
       @NonNull ImageView btnBookmark, @NonNull LinearLayout btnDownload,
-      @NonNull LinearLayout btnPlay, @NonNull ImageView btnShare, @NonNull LinearLayout btnStar,
+      @NonNull LinearLayout btnPlay, @NonNull ImageView btnShare,
       @NonNull NestedScrollView contentLayout, @NonNull LinearLayout genresLayout,
       @NonNull ConstraintLayout imgLayoutBannerTop, @NonNull ImageView imvBackButton,
-      @NonNull ImageView imvBackDrop, @NonNull RecyclerView rcvGenreMovieMore,
-      @NonNull RecyclerView rcvViewCastMore, @NonNull TabLayout tabLayoutMore,
-      @NonNull View tabLine, @NonNull TextView titleMovieName, @NonNull ConstraintLayout toolbar,
+      @NonNull ImageView imvBackDrop, @NonNull LinearLayout layoutsingle,
+      @NonNull RecyclerView rcvDanhSachTap, @NonNull TabLayout tabLayoutMore, @NonNull View tabLine,
+      @NonNull TextView titleMovieName, @NonNull ConstraintLayout toolbar,
+      @NonNull TextView tvActor, @NonNull TextView tvDanhSachTap, @NonNull TextView tvDirector,
       @NonNull TextView tvGenreMovie, @NonNull ReadMoreTextView tvOverViewMore,
-      @NonNull TextView tvTime, @NonNull TextView tvTypeMovie, @NonNull TextView tvVoteAverage,
-      @NonNull ViewPager2 viewPager) {
+      @NonNull TextView tvTime, @NonNull TextView tvTypeMovie, @NonNull ViewPager2 viewPager) {
     this.rootView = rootView;
     this.btnBookmark = btnBookmark;
     this.btnDownload = btnDownload;
     this.btnPlay = btnPlay;
     this.btnShare = btnShare;
-    this.btnStar = btnStar;
     this.contentLayout = contentLayout;
     this.genresLayout = genresLayout;
     this.imgLayoutBannerTop = imgLayoutBannerTop;
     this.imvBackButton = imvBackButton;
     this.imvBackDrop = imvBackDrop;
-    this.rcvGenreMovieMore = rcvGenreMovieMore;
-    this.rcvViewCastMore = rcvViewCastMore;
+    this.layoutsingle = layoutsingle;
+    this.rcvDanhSachTap = rcvDanhSachTap;
     this.tabLayoutMore = tabLayoutMore;
     this.tabLine = tabLine;
     this.titleMovieName = titleMovieName;
     this.toolbar = toolbar;
+    this.tvActor = tvActor;
+    this.tvDanhSachTap = tvDanhSachTap;
+    this.tvDirector = tvDirector;
     this.tvGenreMovie = tvGenreMovie;
     this.tvOverViewMore = tvOverViewMore;
     this.tvTime = tvTime;
     this.tvTypeMovie = tvTypeMovie;
-    this.tvVoteAverage = tvVoteAverage;
     this.viewPager = viewPager;
   }
 
@@ -179,12 +183,6 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnStar;
-      LinearLayout btnStar = ViewBindings.findChildViewById(rootView, id);
-      if (btnStar == null) {
-        break missingId;
-      }
-
       id = R.id.contentLayout;
       NestedScrollView contentLayout = ViewBindings.findChildViewById(rootView, id);
       if (contentLayout == null) {
@@ -215,15 +213,15 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.rcvGenreMovie_More;
-      RecyclerView rcvGenreMovieMore = ViewBindings.findChildViewById(rootView, id);
-      if (rcvGenreMovieMore == null) {
+      id = R.id.layoutsingle;
+      LinearLayout layoutsingle = ViewBindings.findChildViewById(rootView, id);
+      if (layoutsingle == null) {
         break missingId;
       }
 
-      id = R.id.rcvViewCast_More;
-      RecyclerView rcvViewCastMore = ViewBindings.findChildViewById(rootView, id);
-      if (rcvViewCastMore == null) {
+      id = R.id.rcvDanhSachTap;
+      RecyclerView rcvDanhSachTap = ViewBindings.findChildViewById(rootView, id);
+      if (rcvDanhSachTap == null) {
         break missingId;
       }
 
@@ -251,6 +249,24 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvActor;
+      TextView tvActor = ViewBindings.findChildViewById(rootView, id);
+      if (tvActor == null) {
+        break missingId;
+      }
+
+      id = R.id.tvDanhSachTap;
+      TextView tvDanhSachTap = ViewBindings.findChildViewById(rootView, id);
+      if (tvDanhSachTap == null) {
+        break missingId;
+      }
+
+      id = R.id.tvDirector;
+      TextView tvDirector = ViewBindings.findChildViewById(rootView, id);
+      if (tvDirector == null) {
+        break missingId;
+      }
+
       id = R.id.tvGenreMovie;
       TextView tvGenreMovie = ViewBindings.findChildViewById(rootView, id);
       if (tvGenreMovie == null) {
@@ -275,12 +291,6 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvVoteAverage;
-      TextView tvVoteAverage = ViewBindings.findChildViewById(rootView, id);
-      if (tvVoteAverage == null) {
-        break missingId;
-      }
-
       id = R.id.viewPager;
       ViewPager2 viewPager = ViewBindings.findChildViewById(rootView, id);
       if (viewPager == null) {
@@ -288,10 +298,10 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
       }
 
       return new FragmentMovieDetailBinding((ConstraintLayout) rootView, btnBookmark, btnDownload,
-          btnPlay, btnShare, btnStar, contentLayout, genresLayout, imgLayoutBannerTop,
-          imvBackButton, imvBackDrop, rcvGenreMovieMore, rcvViewCastMore, tabLayoutMore, tabLine,
-          titleMovieName, toolbar, tvGenreMovie, tvOverViewMore, tvTime, tvTypeMovie, tvVoteAverage,
-          viewPager);
+          btnPlay, btnShare, contentLayout, genresLayout, imgLayoutBannerTop, imvBackButton,
+          imvBackDrop, layoutsingle, rcvDanhSachTap, tabLayoutMore, tabLine, titleMovieName,
+          toolbar, tvActor, tvDanhSachTap, tvDirector, tvGenreMovie, tvOverViewMore, tvTime,
+          tvTypeMovie, viewPager);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

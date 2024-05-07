@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/imgLayoutBannerTop"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -117,47 +117,10 @@
                 android:orientation="horizontal"
                 android:weightSum="1"
                 app:layout_constraintTop_toBottomOf="@+id/cstLayoutHome">
-
-                <LinearLayout
-                    android:id="@+id/btnStar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/star"
-                        android:gravity="center"
-                        android:src="@drawable/rounded_star_half_24"
-                        app:tint="@color/white" />
-
-                    <TextView
-                        android:id="@+id/tvVoteAverage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:fontFamily="@font/poppins_medium"
-                        android:textColor="@color/slate_300"
-                        android:textSize="14sp"
-                        tools:text="9.8" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:contentDescription="@string/star"
-                        android:gravity="center"
-                        android:src="@drawable/rounded_arrow_forward_24"
-                        app:tint="@color/netflix_red" />
-                </LinearLayout>
-
                 <TextView
                     android:id="@+id/tvTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:fontFamily="@font/poppins_medium"
                     android:textColor="@color/slate_300"
                     android:textSize="15sp"
@@ -166,7 +129,7 @@
                 <TextView
                     android:id="@+id/tvTypeMovie"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginStart="10dp"
                     android:background="@drawable/rounded_btn_bordered_genre"
@@ -176,10 +139,25 @@
                     android:textAlignment="center"
                     android:textColor="@color/slate_200"
                     android:textSize="13sp"
+                    android:text="Movie"
                     tools:text="Movie" />
             </LinearLayout>
-
+            <TextView
+                android:id="@+id/tvDanhSachTap"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Episodes: "
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/slate_200"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvDanhSachTap"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"/>
             <LinearLayout
+                android:id="@+id/layoutsingle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
@@ -246,8 +224,6 @@
                         android:textFontWeight="600"
                         android:textSize="18sp" />
                 </LinearLayout>
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -255,18 +231,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingHorizontal="5dp">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rcvGenreMovie_More"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:visibility="gone"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_genre_details" />
-
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    android:text="Genres:" />
                 <TextView
                     android:id="@+id/tvGenreMovie"
                     android:layout_width="match_parent"
@@ -275,10 +248,38 @@
                     android:fontFamily="@font/poppins_semibold"
                     android:textSize="14sp"
                     tools:text="Genres" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    android:text="Actor:"/>
+                <TextView
+                    android:id="@+id/tvActor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    tools:text="Genres" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    android:text="Director:" />
+                <TextView
+                    android:id="@+id/tvDirector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    tools:text="Genres" />
             </LinearLayout>
-
             <com.borjabravo.readmoretextview.ReadMoreTextView
-                android:id="@+id/tvOverView_More"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
@@ -291,24 +292,38 @@
                 app:trimExpandedText="@string/show_more"
                 app:trimLength="50"
                 app:trimMode="trimModeLine"
-                tools:text="Overview" />
-
-            <LinearLayout
+                android:text="Overview:" />
+            <com.borjabravo.readmoretextview.ReadMoreTextView
+                android:id="@+id/tvOverView_More"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:paddingHorizontal="5dp">
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:colorClickableText="@color/blue_600"
+                app:trimCollapsedText="@string/show_less"
+                app:trimExpandedText="@string/show_more"
+                app:trimLength="50"
+                app:trimMode="trimModeLine"
+                tools:text="Overview" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rcvViewCast_More"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:visibility="visible"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_view_cast" />
-            </LinearLayout>
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:paddingHorizontal="5dp">-->
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/rcvViewCast_More"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:visibility="visible"-->
+<!--                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                    tools:listitem="@layout/item_view_cast" />-->
+<!--            </LinearLayout>-->
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout_More"

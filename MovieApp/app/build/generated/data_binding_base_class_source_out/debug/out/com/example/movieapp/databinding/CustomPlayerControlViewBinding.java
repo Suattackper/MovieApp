@@ -104,73 +104,73 @@ public final class CustomPlayerControlViewBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = com.google.android.exoplayer2.ui.R.id.exo_duration;
+      id = com.google.android.exoplayer2.R.id.exo_duration;
       TextView exoDuration = ViewBindings.findChildViewById(rootView, id);
       if (exoDuration == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_ffwd;
+      id = com.google.android.exoplayer2.R.id.exo_ffwd;
       ImageButton exoFfwd = ViewBindings.findChildViewById(rootView, id);
       if (exoFfwd == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_next;
+      id = com.google.android.exoplayer2.R.id.exo_next;
       ImageButton exoNext = ViewBindings.findChildViewById(rootView, id);
       if (exoNext == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_pause;
+      id = com.google.android.exoplayer2.R.id.exo_pause;
       ImageButton exoPause = ViewBindings.findChildViewById(rootView, id);
       if (exoPause == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_play;
+      id = com.google.android.exoplayer2.R.id.exo_play;
       ImageButton exoPlay = ViewBindings.findChildViewById(rootView, id);
       if (exoPlay == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_position;
+      id = com.google.android.exoplayer2.R.id.exo_position;
       TextView exoPosition = ViewBindings.findChildViewById(rootView, id);
       if (exoPosition == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_prev;
+      id = com.google.android.exoplayer2.R.id.exo_prev;
       ImageButton exoPrev = ViewBindings.findChildViewById(rootView, id);
       if (exoPrev == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_progress_placeholder;
+      id = com.google.android.exoplayer2.R.id.exo_progress_placeholder;
       View exoProgressPlaceholder = ViewBindings.findChildViewById(rootView, id);
       if (exoProgressPlaceholder == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_repeat_toggle;
+      id = com.google.android.exoplayer2.R.id.exo_repeat_toggle;
       ImageButton exoRepeatToggle = ViewBindings.findChildViewById(rootView, id);
       if (exoRepeatToggle == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_rew;
+      id = com.google.android.exoplayer2.R.id.exo_rew;
       ImageButton exoRew = ViewBindings.findChildViewById(rootView, id);
       if (exoRew == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_shuffle;
+      id = com.google.android.exoplayer2.R.id.exo_shuffle;
       ImageButton exoShuffle = ViewBindings.findChildViewById(rootView, id);
       if (exoShuffle == null) {
         break missingId;
       }
 
-      id = com.google.android.exoplayer2.ui.R.id.exo_vr;
+      id = com.google.android.exoplayer2.R.id.exo_vr;
       ImageButton exoVr = ViewBindings.findChildViewById(rootView, id);
       if (exoVr == null) {
         break missingId;

@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
             else if (itemID == R.id.btnMore) {
                 replaceFragmentUI(new WatchListFragment());
             }
-
             return true;
         });
 

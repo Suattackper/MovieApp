@@ -76,10 +76,6 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-48:\\layout\\fragment_cast_movies.xml"
     },
     {
-        "merged": "com.example.movieapp-debug-46:/layout_fragment_home.xml.flat",
-        "source": "com.example.movieapp-main-48:/layout/fragment_home.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-46:\\drawable_rounded_account_circle_24.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-48:\\drawable\\rounded_account_circle_24.xml"
     },
@@ -182,6 +178,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-46:\\drawable_banner_one.jpg.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-48:\\drawable\\banner_one.jpg"
+    },
+    {
+        "merged": "com.example.movieapp-debug-46:/layout_movie_episode_item.xml.flat",
+        "source": "com.example.movieapp-main-48:/layout/movie_episode_item.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-46:\\layout_layout_item_movie_detail_trailers.xml.flat",
@@ -484,6 +484,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-48:\\layout\\activity_welcome_screen.xml"
     },
     {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-46:\\layout_movie_episode_item.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-48:\\layout\\movie_episode_item.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-46:\\drawable_edit_item_background.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-48:\\drawable\\edit_item_background.xml"
     },
@@ -546,6 +550,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-46:\\mipmap-anydpi-v26_ic_logo_app_round.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-48:\\mipmap-anydpi-v26\\ic_logo_app_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-46:\\drawable_btn_fullscreen.png.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-48:\\drawable\\btn_fullscreen.png"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-46:\\layout_activity_splash_screen.xml.flat",

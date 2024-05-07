@@ -45,6 +45,7 @@ drawable account_item_background
 drawable avatar
 drawable banner_one
 drawable book
+drawable btn_fullscreen
 drawable cancel_btn_background
 drawable cancel_btn_background_v2
 drawable checkbox_toggle_selector
@@ -153,7 +154,8 @@ id btnSearch
 id btnShare
 id btnSignin
 id btnSignup
-id btnStar
+id btnTaiTapPhim
+id btnTapPhim
 id btn_cancel
 id btn_send
 id cancelBtn
@@ -201,6 +203,8 @@ id imvMovieItem_Home
 id imvMovieSimilar
 id imvPlayTrailerVideoBtn
 id imvUserAvatar
+id itemLayoutSearch
+id layoutsingle
 id lnEmptyList
 id lnMovieInfo
 id lnlAcccount
@@ -224,10 +228,10 @@ id progressBar
 id progressPercent
 id progressText
 id pvVideoPlaying
+id rcvDanhSachTap
 id rcvDownload
 id rcvFilterGenreMovie
 id rcvFilterListMovie
-id rcvGenreMovie_More
 id rcvImgMovieDetailList_more
 id rcvListMovieSimilar_More
 id rcvMovieCateList
@@ -235,7 +239,6 @@ id rcvMovieCateList_Home
 id rcvMovieList
 id rcvPlayingMovieList
 id rcvTrailerMovie_More
-id rcvViewCast_More
 id runtimeTv
 id sizeTV
 id tabLayout_More
@@ -246,19 +249,24 @@ id titleTv
 id toolBar
 id toolbar
 id toolbarEditProfile
+id tvActor
 id tvBackButtonLogo
 id tvChangePass
 id tvCharacter
+id tvDanhSachTap
+id tvDirector
 id tvGenre
 id tvGenreMovie
 id tvItemCate
 id tvLogout
 id tvLogoutDesc
 id tvMovieDate
+id tvName
 id tvNameCast
 id tvOverView_More
 id tvPageTitle
 id tvSeeAll
+id tvTapPhim
 id tvTime
 id tvTitle
 id tvTitleMovie
@@ -267,7 +275,6 @@ id tvTrailerDate
 id tvTrailerTitle
 id tvTypeMovie
 id tvUserName
-id tvVoteAverage
 id txtCreateAcc
 id txtForgotPass
 id txtSignin
@@ -310,6 +317,7 @@ layout layout_item_movie_detail_trailers
 layout layout_item_movie_home
 layout layout_item_movie_home_img
 layout layout_item_movie_similar
+layout movie_episode_item
 layout movie_image_item
 layout movie_title_category
 menu custom_bottom_nav
