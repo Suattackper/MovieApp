@@ -3271,6 +3271,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable icon_netflix
 drawable icon_watch_list
+drawable image_item_oval
 drawable indicator_bg
 drawable intro_img_background
 drawable logo_app
@@ -3519,6 +3520,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnAnime
 id btnBookmark
 id btnCreateAcc
 id btnDownload
@@ -3527,12 +3529,15 @@ id btnInfoMovie
 id btnModeToggle
 id btnMore
 id btnMyList
+id btnPhimBo
+id btnPhimLe
 id btnPlay
 id btnSave
 id btnSearch
 id btnShare
 id btnSignin
 id btnSignup
+id btnTVShow
 id btnTaiTapPhim
 id btnTapPhim
 id btn_cancel
@@ -3767,6 +3772,7 @@ id invisible
 id inward
 id is_pooling_container_tag
 id italic
+id itemLayout
 id itemLayoutSearch
 id item_touch_helper_previous_elevation
 id jumpToEnd
@@ -3929,6 +3935,9 @@ id pvVideoPlaying
 id radial
 id radio
 id ratio
+id rcvAnime
+id rcvCateD
+id rcvCateN
 id rcvDanhSachTap
 id rcvDownload
 id rcvFilterGenreMovie
@@ -3938,7 +3947,11 @@ id rcvListMovieSimilar_More
 id rcvMovieCateList
 id rcvMovieCateList_Home
 id rcvMovieList
+id rcvPhimBo
+id rcvPhimLe
+id rcvPhimMoiCatNhat
 id rcvPlayingMovieList
+id rcvTVShow
 id rcvTrailerMovie_More
 id rectangles
 id report_drawn
@@ -4077,7 +4090,9 @@ id triangle
 id trimModeLength
 id trimModeLine
 id tvActor
+id tvAnime
 id tvBackButtonLogo
+id tvCate
 id tvChangePass
 id tvCharacter
 id tvDanhSachTap
@@ -4092,7 +4107,11 @@ id tvName
 id tvNameCast
 id tvOverView_More
 id tvPageTitle
+id tvPhimBo
+id tvPhimLe
+id tvPhimMoiCatNhat
 id tvSeeAll
+id tvTCShow
 id tvTapPhim
 id tvTime
 id tvTitle
@@ -4287,6 +4306,7 @@ layout exo_track_selection_dialog
 layout fragment_cast_detail
 layout fragment_cast_movies
 layout fragment_cast_t_v_shows
+layout fragment_category
 layout fragment_delete_download
 layout fragment_download
 layout fragment_download_dialog
@@ -4334,6 +4354,8 @@ layout material_timepicker_dialog
 layout material_timepicker_textinput_display
 layout movie_episode_item
 layout movie_image_item
+layout movie_imagedoc_item
+layout movie_imagengang_item
 layout movie_title_category
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

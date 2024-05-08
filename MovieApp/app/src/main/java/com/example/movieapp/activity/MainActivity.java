@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        replaceFragmentUI(new SearchFragment());
+        replaceFragmentUI(new HomeFragment());
         addEventsOnClick();
 
     }
@@ -60,6 +60,6 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.frameLayout, fragment);
-        transaction.commit();
+        transaction.commitNow();
     }
 }

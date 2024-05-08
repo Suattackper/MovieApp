@@ -76,7 +76,6 @@ public class MoviePlayingFragment extends Fragment {
         Bundle bundle = getArguments();
         if (bundle != null) {
             String m3u8 = bundle.getString("m3u8");
-            Log.e("ExoPlayerm3u8", m3u8);
             try{
                 // Tìm và tham chiếu đến PlayerView trong layout
 //                playerView = findViewById(R.id.pvVideoPlaying);

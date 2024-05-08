@@ -11,6 +11,15 @@ public class Params {
     private String filterType;
     private String sortField;
     private String sortType;
+    private Pagination pagination;
+
+    public Pagination getPagination() {
+        return pagination;
+    }
+
+    public void setPagination(Pagination pagination) {
+        this.pagination = pagination;
+    }
 
     public String getType_slug() {
         return type_slug;

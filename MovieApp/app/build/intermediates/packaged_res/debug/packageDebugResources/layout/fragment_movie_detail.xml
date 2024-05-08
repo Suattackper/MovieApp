@@ -117,47 +117,10 @@
                 android:orientation="horizontal"
                 android:weightSum="1"
                 app:layout_constraintTop_toBottomOf="@+id/cstLayoutHome">
-
-<!--                <LinearLayout-->
-<!--                    android:id="@+id/btnStar"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:gravity="center_vertical"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <ImageView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:contentDescription="@string/star"-->
-<!--                        android:gravity="center"-->
-<!--                        android:src="@drawable/rounded_star_half_24"-->
-<!--                        app:tint="@color/white" />-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/tvVoteAverage"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="10dp"-->
-<!--                        android:fontFamily="@font/poppins_medium"-->
-<!--                        android:textColor="@color/slate_300"-->
-<!--                        android:textSize="14sp"-->
-<!--                        tools:text="9.8" />-->
-
-<!--                    <ImageView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="10dp"-->
-<!--                        android:contentDescription="@string/star"-->
-<!--                        android:gravity="center"-->
-<!--                        android:src="@drawable/rounded_arrow_forward_24"-->
-<!--                        app:tint="@color/netflix_red" />-->
-<!--                </LinearLayout>-->
-
                 <TextView
                     android:id="@+id/tvTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:fontFamily="@font/poppins_medium"
                     android:textColor="@color/slate_300"
                     android:textSize="15sp"
@@ -185,7 +148,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Episodes: "
-                android:background="@drawable/rounded_btn_bordered_genre"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/slate_200"
                 />

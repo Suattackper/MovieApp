@@ -48,8 +48,8 @@ public class MovieSearchItemAdapter extends RecyclerView.Adapter<MovieSearchItem
 
         holder.tvName.setText(item.getName());
 
-        String imageUrl = domainimage + "/" + item.getPoster_url();
-        Picasso.get().load(imageUrl).into(holder.imvMovieItem);
+        //String imageUrl = domainimage + "/" + item.getPoster_url();
+        //Picasso.get().load(imageUrl).into(holder.imvMovieItem);
 
         holder.itemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,13 +80,13 @@ public class MovieSearchItemAdapter extends RecyclerView.Adapter<MovieSearchItem
     }
 
     public static class MovieSearchItemAdapterHolder extends RecyclerView.ViewHolder {
-        ImageView imvMovieItem;
+        //ImageView imvMovieItem;
         TextView tvName;
         LinearLayout itemLayout;
 
         public MovieSearchItemAdapterHolder(@NonNull View itemView) {
             super(itemView);
-            imvMovieItem = itemView.findViewById(R.id.imvMovieItem);
+            //imvMovieItem = itemView.findViewById(R.id.imvMovieItem);
             tvName = itemView.findViewById(R.id.tvName);
             itemLayout = itemView.findViewById(R.id.itemLayoutSearch);
         }
