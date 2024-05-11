@@ -45,10 +45,10 @@ public class WatchListFragment extends Fragment {
     private void initUI() {
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
 
-        movieImageCategoryAdapter = new MovieImageCategoryAdapter(getContext(), getMovieImageCategory());
-
-        binding.rcvMovieList.setLayoutManager(manager);
-        binding.rcvMovieList.setAdapter(movieImageCategoryAdapter);
+//        movieImageCategoryAdapter = new MovieImageCategoryAdapter(getContext(), getMovieImageCategory());
+//
+//        binding.rcvMovieList.setLayoutManager(manager);
+//        binding.rcvMovieList.setAdapter(movieImageCategoryAdapter);
     }
 
     private List<MovieImageCategory> getMovieImageCategory() {

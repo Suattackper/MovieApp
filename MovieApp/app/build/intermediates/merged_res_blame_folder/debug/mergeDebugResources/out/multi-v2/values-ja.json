@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.movieapp-mergeDebugResources-44:/values-ja/values-ja.xml",
+            "outputFile": "com.example.movieapp-mergeDebugResources-45:/values-ja/values-ja.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\31392ce50228ed628a92ddf35ad349bd\\transformed\\core-1.9.0\\res\\values-ja\\values-ja.xml",

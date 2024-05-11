@@ -1,10 +1,13 @@
 R_DEF: Internal format may change without notice
 local
+attr? fullscreenBackgroundColor
+attr? fullscreenTextColor
 color amber_200
 color background
 color background_100
 color background_200
 color black
+color black_overlay
 color blue_600
 color dark_blue_300
 color dark_blue_600
@@ -17,6 +20,10 @@ color ic_logo_app_background
 color indigo_500
 color indigo_700
 color light_300
+color light_blue_600
+color light_blue_900
+color light_blue_A200
+color light_blue_A400
 color light_grey_200
 color light_grey_400
 color netflix_dark
@@ -45,6 +52,7 @@ drawable account_item_background
 drawable avatar
 drawable banner_one
 drawable book
+drawable borderdetailmovie
 drawable btn_fullscreen
 drawable cancel_btn_background
 drawable cancel_btn_background_v2
@@ -74,6 +82,7 @@ drawable indicator_bg
 drawable intro_img_background
 drawable logo_app
 drawable logout_item_background
+drawable lohotan
 drawable mode_item_background
 drawable money_heist
 drawable mountain_forest_clouds
@@ -183,6 +192,7 @@ id editEmail
 id editPassword
 id editPhone
 id editSearch
+id edtTapPhim
 id filterButton
 id filterLayout
 id frameLayout
@@ -210,6 +220,7 @@ id imvPlayTrailerVideoBtn
 id imvUserAvatar
 id itemLayout
 id itemLayoutSearch
+id layoutXemTapPhim
 id layoutsingle
 id lnEmptyList
 id lnMovieInfo
@@ -250,6 +261,7 @@ id rcvPhimBo
 id rcvPhimLe
 id rcvPhimMoiCatNhat
 id rcvPlayingMovieList
+id rcvSimilar
 id rcvTVShow
 id rcvTrailerMovie_More
 id runtimeTv
@@ -284,24 +296,29 @@ id tvPhimBo
 id tvPhimLe
 id tvPhimMoiCatNhat
 id tvSeeAll
+id tvSimilar
 id tvTCShow
 id tvTapPhim
 id tvTime
 id tvTitle
 id tvTitleMovie
 id tvTitle_Home
+id tvTrailer
 id tvTrailerDate
 id tvTrailerTitle
 id tvTypeMovie
 id tvUserName
+id tvXemTapPhim
 id txtCreateAcc
 id txtForgotPass
 id txtSignin
 id txtSigninLabel
 id viewPager
+id ytbPlayer
 layout activity_forgot_password
 layout activity_login
 layout activity_main
+layout activity_play_movie
 layout activity_register
 layout activity_splash_screen
 layout activity_welcome_screen
@@ -372,6 +389,8 @@ string delete
 string delete_message
 string download
 string download_desc
+string dummy_button
+string dummy_content
 string edit_profile
 string email
 string empty_down_desc
@@ -423,6 +442,7 @@ string star
 string start_btn
 string start_up
 string title
+string title_activity_play_movie
 string title_ct_release
 string trailer_title
 string trailers
@@ -435,6 +455,11 @@ style Base.Theme.MovieApp
 style BottomNavigationTheme
 style CustomText
 style NetflixAppCloneTheme
+style ThemeOverlay.MovieApp.FullscreenContainer
 style Theme.MovieApp
+style Theme.MovieApp.Fullscreen
+style Widget.Theme.MovieApp.ActionBar.Fullscreen
+style Widget.Theme.MovieApp.ButtonBar.Fullscreen
+styleable FullscreenAttrs fullscreenBackgroundColor fullscreenTextColor
 xml backup_rules
 xml data_extraction_rules

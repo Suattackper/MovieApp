@@ -4,6 +4,7 @@ package com.example.movieapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,10 +15,9 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import androidx.viewpager2.widget.ViewPager2;
 import com.borjabravo.readmoretextview.ReadMoreTextView;
 import com.example.movieapp.R;
-import com.google.android.material.tabs.TabLayout;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -42,6 +42,9 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
   public final NestedScrollView contentLayout;
 
   @NonNull
+  public final EditText edtTapPhim;
+
+  @NonNull
   public final LinearLayout genresLayout;
 
   @NonNull
@@ -54,13 +57,16 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
   public final ImageView imvBackDrop;
 
   @NonNull
+  public final LinearLayout layoutXemTapPhim;
+
+  @NonNull
   public final LinearLayout layoutsingle;
 
   @NonNull
   public final RecyclerView rcvDanhSachTap;
 
   @NonNull
-  public final TabLayout tabLayoutMore;
+  public final RecyclerView rcvSimilar;
 
   @NonNull
   public final View tabLine;
@@ -87,38 +93,52 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
   public final ReadMoreTextView tvOverViewMore;
 
   @NonNull
+  public final TextView tvSimilar;
+
+  @NonNull
   public final TextView tvTime;
+
+  @NonNull
+  public final TextView tvTrailer;
 
   @NonNull
   public final TextView tvTypeMovie;
 
   @NonNull
-  public final ViewPager2 viewPager;
+  public final TextView tvXemTapPhim;
+
+  @NonNull
+  public final YouTubePlayerView ytbPlayer;
 
   private FragmentMovieDetailBinding(@NonNull ConstraintLayout rootView,
       @NonNull ImageView btnBookmark, @NonNull LinearLayout btnDownload,
       @NonNull LinearLayout btnPlay, @NonNull ImageView btnShare,
-      @NonNull NestedScrollView contentLayout, @NonNull LinearLayout genresLayout,
-      @NonNull ConstraintLayout imgLayoutBannerTop, @NonNull ImageView imvBackButton,
-      @NonNull ImageView imvBackDrop, @NonNull LinearLayout layoutsingle,
-      @NonNull RecyclerView rcvDanhSachTap, @NonNull TabLayout tabLayoutMore, @NonNull View tabLine,
+      @NonNull NestedScrollView contentLayout, @NonNull EditText edtTapPhim,
+      @NonNull LinearLayout genresLayout, @NonNull ConstraintLayout imgLayoutBannerTop,
+      @NonNull ImageView imvBackButton, @NonNull ImageView imvBackDrop,
+      @NonNull LinearLayout layoutXemTapPhim, @NonNull LinearLayout layoutsingle,
+      @NonNull RecyclerView rcvDanhSachTap, @NonNull RecyclerView rcvSimilar, @NonNull View tabLine,
       @NonNull TextView titleMovieName, @NonNull ConstraintLayout toolbar,
       @NonNull TextView tvActor, @NonNull TextView tvDanhSachTap, @NonNull TextView tvDirector,
       @NonNull TextView tvGenreMovie, @NonNull ReadMoreTextView tvOverViewMore,
-      @NonNull TextView tvTime, @NonNull TextView tvTypeMovie, @NonNull ViewPager2 viewPager) {
+      @NonNull TextView tvSimilar, @NonNull TextView tvTime, @NonNull TextView tvTrailer,
+      @NonNull TextView tvTypeMovie, @NonNull TextView tvXemTapPhim,
+      @NonNull YouTubePlayerView ytbPlayer) {
     this.rootView = rootView;
     this.btnBookmark = btnBookmark;
     this.btnDownload = btnDownload;
     this.btnPlay = btnPlay;
     this.btnShare = btnShare;
     this.contentLayout = contentLayout;
+    this.edtTapPhim = edtTapPhim;
     this.genresLayout = genresLayout;
     this.imgLayoutBannerTop = imgLayoutBannerTop;
     this.imvBackButton = imvBackButton;
     this.imvBackDrop = imvBackDrop;
+    this.layoutXemTapPhim = layoutXemTapPhim;
     this.layoutsingle = layoutsingle;
     this.rcvDanhSachTap = rcvDanhSachTap;
-    this.tabLayoutMore = tabLayoutMore;
+    this.rcvSimilar = rcvSimilar;
     this.tabLine = tabLine;
     this.titleMovieName = titleMovieName;
     this.toolbar = toolbar;
@@ -127,9 +147,12 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
     this.tvDirector = tvDirector;
     this.tvGenreMovie = tvGenreMovie;
     this.tvOverViewMore = tvOverViewMore;
+    this.tvSimilar = tvSimilar;
     this.tvTime = tvTime;
+    this.tvTrailer = tvTrailer;
     this.tvTypeMovie = tvTypeMovie;
-    this.viewPager = viewPager;
+    this.tvXemTapPhim = tvXemTapPhim;
+    this.ytbPlayer = ytbPlayer;
   }
 
   @Override
@@ -189,6 +212,12 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.edtTapPhim;
+      EditText edtTapPhim = ViewBindings.findChildViewById(rootView, id);
+      if (edtTapPhim == null) {
+        break missingId;
+      }
+
       id = R.id.genresLayout;
       LinearLayout genresLayout = ViewBindings.findChildViewById(rootView, id);
       if (genresLayout == null) {
@@ -213,6 +242,12 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layoutXemTapPhim;
+      LinearLayout layoutXemTapPhim = ViewBindings.findChildViewById(rootView, id);
+      if (layoutXemTapPhim == null) {
+        break missingId;
+      }
+
       id = R.id.layoutsingle;
       LinearLayout layoutsingle = ViewBindings.findChildViewById(rootView, id);
       if (layoutsingle == null) {
@@ -225,9 +260,9 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tabLayout_More;
-      TabLayout tabLayoutMore = ViewBindings.findChildViewById(rootView, id);
-      if (tabLayoutMore == null) {
+      id = R.id.rcvSimilar;
+      RecyclerView rcvSimilar = ViewBindings.findChildViewById(rootView, id);
+      if (rcvSimilar == null) {
         break missingId;
       }
 
@@ -279,9 +314,21 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvSimilar;
+      TextView tvSimilar = ViewBindings.findChildViewById(rootView, id);
+      if (tvSimilar == null) {
+        break missingId;
+      }
+
       id = R.id.tvTime;
       TextView tvTime = ViewBindings.findChildViewById(rootView, id);
       if (tvTime == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTrailer;
+      TextView tvTrailer = ViewBindings.findChildViewById(rootView, id);
+      if (tvTrailer == null) {
         break missingId;
       }
 
@@ -291,17 +338,23 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.viewPager;
-      ViewPager2 viewPager = ViewBindings.findChildViewById(rootView, id);
-      if (viewPager == null) {
+      id = R.id.tvXemTapPhim;
+      TextView tvXemTapPhim = ViewBindings.findChildViewById(rootView, id);
+      if (tvXemTapPhim == null) {
+        break missingId;
+      }
+
+      id = R.id.ytbPlayer;
+      YouTubePlayerView ytbPlayer = ViewBindings.findChildViewById(rootView, id);
+      if (ytbPlayer == null) {
         break missingId;
       }
 
       return new FragmentMovieDetailBinding((ConstraintLayout) rootView, btnBookmark, btnDownload,
-          btnPlay, btnShare, contentLayout, genresLayout, imgLayoutBannerTop, imvBackButton,
-          imvBackDrop, layoutsingle, rcvDanhSachTap, tabLayoutMore, tabLine, titleMovieName,
-          toolbar, tvActor, tvDanhSachTap, tvDirector, tvGenreMovie, tvOverViewMore, tvTime,
-          tvTypeMovie, viewPager);
+          btnPlay, btnShare, contentLayout, edtTapPhim, genresLayout, imgLayoutBannerTop,
+          imvBackButton, imvBackDrop, layoutXemTapPhim, layoutsingle, rcvDanhSachTap, rcvSimilar,
+          tabLine, titleMovieName, toolbar, tvActor, tvDanhSachTap, tvDirector, tvGenreMovie,
+          tvOverViewMore, tvSimilar, tvTime, tvTrailer, tvTypeMovie, tvXemTapPhim, ytbPlayer);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

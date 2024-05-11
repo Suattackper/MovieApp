@@ -31,6 +31,12 @@ public class MovieHomeCategoryNAdapter extends RecyclerView.Adapter<MovieHomeCat
         this.context = context;
         this.domainimage = domainimage;
     }
+    public MovieHomeCategoryNAdapter() {}
+    public void addData(List<Item> newData) {
+        int startPosition = listItem.size();
+        listItem.addAll(newData);
+        notifyItemRangeInserted(startPosition, newData.size());
+    }
     @NonNull
     @Override
     public MovieHomeCategoryNAdapter.MovieHomeCategoryNAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -81,6 +87,7 @@ public class MovieHomeCategoryNAdapter extends RecyclerView.Adapter<MovieHomeCat
             imvMovieItem = itemView.findViewById(R.id.imvMovieItem);
             tvName = itemView.findViewById(R.id.tvName);
             itemLayout = itemView.findViewById(R.id.itemLayout);
+
         }
     }
 }

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:allowBackup="true"
@@ -15,26 +16,32 @@
         android:theme="@style/Theme.MovieApp"
         tools:targetApi="31">
         <activity
+            android:name=".PlayMovieActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_play_movie"
+            android:theme="@style/Theme.MovieApp.Fullscreen" />
+        <activity
             android:name=".activity.ForgotPasswordActivity"
-            android:theme="@style/NetflixAppCloneTheme"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/NetflixAppCloneTheme" />
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/NetflixAppCloneTheme"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/NetflixAppCloneTheme" />
         <activity
             android:name=".activity.RegisterActivity"
-            android:theme="@style/NetflixAppCloneTheme"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/NetflixAppCloneTheme" />
         <activity
             android:name=".activity.WelcomeScreenActivity"
-            android:theme="@style/NetflixAppCloneTheme"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/NetflixAppCloneTheme" />
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/NetflixAppCloneTheme"
             android:configChanges="uiMode|orientation|screenSize|screenLayout"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/NetflixAppCloneTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,8 +50,8 @@
         </activity>
         <activity
             android:name=".activity.SplashScreenActivity"
-            android:theme="@style/NetflixAppCloneTheme"
-            android:exported="false"/>
+            android:exported="false"
+            android:theme="@style/NetflixAppCloneTheme" />
     </application>
 
 </manifest>

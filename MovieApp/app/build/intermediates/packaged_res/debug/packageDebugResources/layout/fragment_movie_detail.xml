@@ -124,10 +124,11 @@
                     android:fontFamily="@font/poppins_medium"
                     android:textColor="@color/slate_300"
                     android:textSize="15sp"
-                    tools:text="07 Agu 2023" />
+                    android:text="07 Agu 202307" />
 
                 <TextView
                     android:id="@+id/tvTypeMovie"
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -139,23 +140,67 @@
                     android:textAlignment="center"
                     android:textColor="@color/slate_200"
                     android:textSize="13sp"
-                    android:text="Movie"
-                    tools:text="Movie" />
+                    android:text="Movie"/>
             </LinearLayout>
             <TextView
                 android:id="@+id/tvDanhSachTap"
                 android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Episodes: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Episodes "
                 android:fontFamily="@font/poppins_medium"
+                android:paddingHorizontal="20dp"
+                android:textAlignment="center"
                 android:textColor="@color/slate_200"
+                android:textSize="13sp"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
                 />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcvDanhSachTap"
                 android:layout_width="match_parent"
                 android:visibility="gone"
                 android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/layoutXemTapPhim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/slate_300"
+                    android:textSize="17sp"
+                    android:text="Xem tập:" />
+                <EditText
+                    android:id="@+id/edtTapPhim"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:textColor="@color/slate_200"
+                    android:textSize="17sp"
+                    android:background="@drawable/borderdetailmovie"
+                    />
+                <TextView
+                    android:id="@+id/tvXemTapPhim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/rounded_btn_bordered_genre"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:paddingHorizontal="20dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/slate_200"
+                    android:textSize="17sp"
+                    android:text="Xem"/>
+            </LinearLayout>
             <LinearLayout
                 android:id="@+id/layoutsingle"
                 android:layout_width="match_parent"
@@ -249,6 +294,7 @@
                     android:textSize="14sp"
                     tools:text="Genres" />
                 <TextView
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -264,6 +310,7 @@
                     android:textSize="14sp"
                     tools:text="Genres" />
                 <TextView
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -278,35 +325,71 @@
                     android:fontFamily="@font/poppins_semibold"
                     android:textSize="14sp"
                     tools:text="Genres" />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    tools:text="Overview:" />
+                <com.borjabravo.readmoretextview.ReadMoreTextView
+                    android:id="@+id/tvOverView_More"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:colorClickableText="@color/blue_600"
+                    app:trimCollapsedText="@string/show_less"
+                    app:trimExpandedText="@string/show_more"
+                    app:trimLength="50"
+                    app:trimMode="trimModeLine"
+                    tools:text="Overview" />
+                <View
+                    android:visibility="gone"
+                    android:id="@+id/tabLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.75dp"
+                    android:layout_marginTop="-4dp"
+                    android:background="@drawable/indicator_bg"
+                    android:backgroundTint="@color/gray_400" />
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tvTrailer"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    android:text="Trailer" />
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                    android:visibility="gone"
+                    android:id="@+id/ytbPlayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:autoPlay="false" />
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tvSimilar"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    android:text="Similar" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:visibility="gone"
+                    android:id="@+id/rcvSimilar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
-            <com.borjabravo.readmoretextview.ReadMoreTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                app:colorClickableText="@color/blue_600"
-                app:trimCollapsedText="@string/show_less"
-                app:trimExpandedText="@string/show_more"
-                app:trimLength="50"
-                app:trimMode="trimModeLine"
-                android:text="Overview:" />
-            <com.borjabravo.readmoretextview.ReadMoreTextView
-                android:id="@+id/tvOverView_More"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                app:colorClickableText="@color/blue_600"
-                app:trimCollapsedText="@string/show_less"
-                app:trimExpandedText="@string/show_more"
-                app:trimLength="50"
-                app:trimMode="trimModeLine"
-                tools:text="Overview" />
+
 
 <!--            <LinearLayout-->
 <!--                android:layout_width="match_parent"-->
@@ -325,54 +408,61 @@
 <!--                    tools:listitem="@layout/item_view_cast" />-->
 <!--            </LinearLayout>-->
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout_More"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/tab_background"
-                android:translationZ="1dp"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:tabBackground="@drawable/tab_background"
-                app:tabGravity="fill"
-                app:tabIndicator="@drawable/indicator_bg"
-                app:tabIndicatorColor="@color/netflix_red"
-                app:tabIndicatorFullWidth="true"
-                app:tabIndicatorHeight="3.75dp"
-                app:tabMode="fixed"
-                app:tabSelectedTextColor="@color/white"
-                app:tabTextAppearance="@style/CustomText"
-                app:tabTextColor="@color/gray_400">
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/tabLayout_More"-->
+<!--                android:visibility="gone"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@drawable/tab_background"-->
+<!--                android:translationZ="1dp"-->
+<!--                app:layout_scrollFlags="scroll|enterAlways"-->
+<!--                app:tabBackground="@drawable/tab_background"-->
+<!--                app:tabGravity="fill"-->
+<!--                app:tabIndicator="@drawable/indicator_bg"-->
+<!--                app:tabIndicatorColor="@color/netflix_red"-->
+<!--                app:tabIndicatorFullWidth="true"-->
+<!--                app:tabIndicatorHeight="3.75dp"-->
+<!--                app:tabMode="fixed"-->
+<!--                app:tabSelectedTextColor="@color/white"-->
+<!--                app:tabTextAppearance="@style/CustomText"-->
+<!--                app:tabTextColor="@color/gray_400">-->
 
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/trailers" />
+<!--                <com.google.android.material.tabs.TabItem-->
+<!--                    android:id="@+id/tabTrailer"-->
+<!--                    android:visibility="gone"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/trailers" />-->
 
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/images" />
+<!--                <com.google.android.material.tabs.TabItem-->
+<!--                    android:id="@+id/tabImage"-->
+<!--                    android:visibility="gone"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/images" />-->
 
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/smilar" />
-            </com.google.android.material.tabs.TabLayout>
+<!--                <com.google.android.material.tabs.TabItem-->
+<!--                    android:id="@+id/tabSimilar"-->
+<!--                    android:visibility="gone"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/smilar" />-->
+<!--            </com.google.android.material.tabs.TabLayout>-->
 
-            <View
-                android:id="@+id/tabLine"
-                android:layout_width="match_parent"
-                android:layout_height="1.75dp"
-                android:layout_marginTop="-4dp"
-                android:background="@drawable/indicator_bg"
-                android:backgroundTint="@color/gray_400" />
+<!--            <View-->
+<!--                android:id="@+id/tabLine"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1.75dp"-->
+<!--                android:layout_marginTop="-4dp"-->
+<!--                android:background="@drawable/indicator_bg"-->
+<!--                android:backgroundTint="@color/gray_400" />-->
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPager"
-                android:layout_width="wrap_content"
-                android:layout_height="500dp"
-                android:layout_marginTop="12dp"/>
+<!--            <androidx.viewpager2.widget.ViewPager2-->
+<!--                android:id="@+id/viewPager"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="500dp"-->
+<!--                android:layout_marginTop="12dp"/>-->
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

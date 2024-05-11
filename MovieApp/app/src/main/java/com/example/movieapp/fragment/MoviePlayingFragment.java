@@ -80,7 +80,8 @@ public class MoviePlayingFragment extends Fragment {
                 // Tìm và tham chiếu đến PlayerView trong layout
 //                playerView = findViewById(R.id.pvVideoPlaying);
 //                binding.pvVideoPlaying
-
+                //ẩn tavs vụ và điều hướdddieneienj thoại
+                binding.pvVideoPlaying.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE);
                 // Tạo một ExoPlayer instance
                 player = new SimpleExoPlayer.Builder(requireContext()).build();
 

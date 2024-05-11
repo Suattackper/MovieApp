@@ -1,8 +1,10 @@
 package com.example.movieapp.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -16,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.airbnb.lottie.L;
+import com.example.movieapp.PlayMovieActivity;
 import com.example.movieapp.R;
 import com.example.movieapp.adapter.MovieEpisodesAdapter;
 import com.example.movieapp.adapter.MovieSearchItemAdapter;
@@ -25,7 +29,16 @@ import com.example.movieapp.databinding.FragmentSearchBinding;
 import com.example.movieapp.model.Category;
 import com.example.movieapp.model.MovieDetail;
 import com.example.movieapp.model.MovieSearch;
+import com.example.movieapp.model.ServerData;
+import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.MediaItem;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,6 +52,7 @@ import retrofit2.Response;
 public class MovieDetailFragment extends Fragment {
     FragmentMovieDetailBinding binding;
     String m3u8 = "";
+    List<ServerData> serverData;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -116,17 +130,39 @@ public class MovieDetailFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Khởi tạo Fragment và truyền dữ liệu nếu cần
-                MoviePlayingFragment fragment = new MoviePlayingFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("m3u8", m3u8);
-                fragment.setArguments(bundle);
+//                MoviePlayingFragment fragment = new MoviePlayingFragment();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("m3u8", m3u8);
+//                fragment.setArguments(bundle);
+//
+//                // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
+//                FragmentManager manager = getActivity().getSupportFragmentManager();
+//                FragmentTransaction transaction = manager.beginTransaction();
+//                transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
+//                transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
+//                transaction.commit();
 
-                // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
-                FragmentManager manager = getActivity().getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
-                transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
-                transaction.commit();
+                Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
+                intent.putExtra("m3u8", m3u8);
+                startActivity(intent);
+            }
+        });
+        binding.tvXemTapPhim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //regex kiêm tra chỗi có phải là số
+                if(binding.edtTapPhim.getText().toString().matches("-?\\d+(\\.\\d+)?")){
+                    int tap = Integer.valueOf(binding.edtTapPhim.getText().toString());
+                    if(serverData.size()>=tap&&tap>0){
+                        //chuyển sang màn hình khaác
+                        Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
+                        //truyền dữ liệu
+                        intent.putExtra("m3u8", serverData.get(tap-1).getLink_m3u8());
+                        startActivity(intent);
+                    }
+                    else Toast.makeText(getContext(), "Tập phim không tồn tại", Toast.LENGTH_SHORT).show();
+                }
+                else Toast.makeText(getContext(), "Tập phim không tồn tại", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -141,6 +177,7 @@ public class MovieDetailFragment extends Fragment {
     }
 
     private void getDataMovie(String slug) {
+        //lấy dữ liệu phim từ slug
         ApiService.apiService.getMovieBySlug(slug).enqueue(new Callback<MovieDetail>() {
             @Override
             public void onResponse(Call<MovieDetail> call, Response<MovieDetail> response) {
@@ -148,32 +185,45 @@ public class MovieDetailFragment extends Fragment {
                     try {
                         MovieDetail moviedetail = response.body();
 
+                        serverData = moviedetail.getEpisodes().get(0).getServer_data();
+                        String nam = "Năm phát hành: " + String.valueOf(moviedetail.getMovie().getYear()) + "\n";
+                        if(moviedetail.getMovie().getStatus().equals("completed")){
+                            nam = nam + "Đã hoàn thành";
+                        }
+                        else nam = nam + "Đang tiến hành";
+
                         if(moviedetail.getMovie().getType().equals("single")){
                             binding.layoutsingle.setVisibility(View.VISIBLE);
                             binding.rcvDanhSachTap.setVisibility(View.GONE);
                             binding.tvDanhSachTap.setVisibility(View.GONE);
                             m3u8 = moviedetail.getEpisodes().get(0).getServer_data().get(0).getLink_m3u8();
+                            nam = nam + " - Phim lẻ";
+                        }
+                        else if (moviedetail.getMovie().getType().equals("series")) {
+                            GetEpisode(moviedetail.getEpisodes().get(0).getServer_data());
+                            nam = nam + " - Phim Bộ";
+                        }
+                        else if (moviedetail.getMovie().getType().equals("tvshows")) {
+                            GetEpisode(moviedetail.getEpisodes().get(0).getServer_data());
+                            nam = nam + " - TV Shows";
                         }
                         else{
-                            binding.layoutsingle.setVisibility(View.GONE);
-                            binding.rcvDanhSachTap.setVisibility(View.VISIBLE);
-                            binding.tvDanhSachTap.setVisibility(View.VISIBLE);
-
-                            LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
-
-                            MovieEpisodesAdapter adapter = new MovieEpisodesAdapter(moviedetail.getEpisodes().get(0).getServer_data(), getContext());
-
-                            binding.rcvDanhSachTap.setLayoutManager(manager);
-                            binding.rcvDanhSachTap.setAdapter(adapter);
+                            nam = nam + " - Anime";
+                            if(moviedetail.getMovie().getEpisode_total().equals("1")){
+                                binding.layoutsingle.setVisibility(View.VISIBLE);
+                                binding.rcvDanhSachTap.setVisibility(View.GONE);
+                                binding.tvDanhSachTap.setVisibility(View.GONE);
+                                m3u8 = moviedetail.getEpisodes().get(0).getServer_data().get(0).getLink_m3u8();
+                            }
+                            else GetEpisode(moviedetail.getEpisodes().get(0).getServer_data());
                         }
                         //m3u8 = moviedetail.getEpisodes().get(0).getServer_data().get(0).getLink_m3u8();
 
-
+                        binding.tvTime.setText(nam);
+                        //set image bằng picasso
                         String imageUrl = moviedetail.getMovie().getThumb_url();
                         Picasso.get().load(imageUrl).into(binding.imvBackDrop);
                         binding.titleMovieName.setText(moviedetail.getMovie().getName());
-                        String nam = "Năm phát hành: " + String.valueOf(moviedetail.getMovie().getYear());
-                        binding.tvTime.setText(nam);
                         String cate = "";
                         int size = moviedetail.getMovie().getCategory().size();
                         int j = 0;
@@ -214,6 +264,29 @@ public class MovieDetailFragment extends Fragment {
                             k++;
                         }
                         binding.tvDirector.setText(director);
+
+                        if(!moviedetail.getMovie().getTrailer_url().equals("")){
+                            binding.tabLine.setVisibility(View.VISIBLE);
+                            binding.tvTrailer.setVisibility(View.VISIBLE);
+                            binding.ytbPlayer.setVisibility(View.VISIBLE);
+
+                            getLifecycle().addObserver(binding.ytbPlayer);
+
+                            //set trailer vào youtubeplayer
+                            binding.ytbPlayer.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+                                @Override
+                                public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                                    String videoId = extractVideoId(moviedetail.getMovie().getTrailer_url());
+                                    youTubePlayer.cueVideo(videoId, 0);
+                                }
+                            });
+                        }
+//                        if(moviedetail.getMovie().getType().equals("series")){
+//                            binding.tabLine.setVisibility(View.VISIBLE);
+//                            binding.tvSimilar.setVisibility(View.VISIBLE);
+//                            binding.rcvSimilar.setVisibility(View.VISIBLE);
+//
+//                        }
                     }
                     catch (Exception e){
                         Log.e("SearchFragment", e.getMessage());
@@ -229,5 +302,46 @@ public class MovieDetailFragment extends Fragment {
                 getActivity().onBackPressed();
             }
         });
+    }
+
+    private void GetEpisode(List<ServerData> serverData) {
+        binding.layoutsingle.setVisibility(View.GONE);
+        binding.rcvDanhSachTap.setVisibility(View.VISIBLE);
+        binding.tvDanhSachTap.setVisibility(View.VISIBLE);
+        binding.layoutXemTapPhim.setVisibility(View.VISIBLE);
+
+        LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
+        MovieEpisodesAdapter adapter = new MovieEpisodesAdapter(serverData, getContext());
+
+        binding.rcvDanhSachTap.setLayoutManager(manager);
+        binding.rcvDanhSachTap.setAdapter(adapter);
+    }
+
+    public static String extractVideoId(String youtubeUrl) {
+        String videoId = null;
+        if (youtubeUrl != null && youtubeUrl.trim().length() > 0) {
+            String query = Uri.parse(youtubeUrl).getQuery();
+            if (query != null) {
+                String[] queryParams = query.split("&");
+                for (String param : queryParams) {
+                    String[] paramSplit = param.split("=");
+                    if (paramSplit.length > 1 && paramSplit[0].equals("v")) {
+                        videoId = paramSplit[1];
+                        break;
+                    }
+                }
+            }
+            // If videoId still null, try to extract from last part of path
+            if (videoId == null || videoId.isEmpty()) {
+                String path = Uri.parse(youtubeUrl).getPath();
+                if (path != null) {
+                    String[] pathSegments = path.split("/");
+                    if (pathSegments.length > 0) {
+                        videoId = pathSegments[pathSegments.length - 1];
+                    }
+                }
+            }
+        }
+        return videoId;
     }
 }

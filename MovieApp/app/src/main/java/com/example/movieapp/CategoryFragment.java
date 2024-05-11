@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -36,6 +38,8 @@ public class CategoryFragment extends Fragment {
     FragmentCategoryBinding binding;
     int currentPage = 1;
     String danhsach = "";
+    MovieHomeCategoryNAdapter adaptern = new MovieHomeCategoryNAdapter();
+    boolean isScrolledToEnd = false;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -83,8 +87,7 @@ public class CategoryFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentCategoryBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-
-
+        currentPage = 1;
         // Lấy dữ liệu từ Bundle
         Bundle bundle = getArguments();
         if (bundle != null) {
@@ -100,26 +103,7 @@ public class CategoryFragment extends Fragment {
 
         return view;
     }
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//        int action = event.getActionMasked();
-//
-//        switch(action) {
-//            case MotionEvent.ACTION_DOWN:
-//                // Xử lý khi người dùng chạm xuống màn hình
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//                // Xử lý khi người dùng di chuyển trên màn hình
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                // Xử lý khi người dùng rời tay khỏi màn hình
-//                break;
-//            default:
-//                return super.onTouchEvent(event);
-//        }
-//
-//        return true; // Trả về true để báo cho hệ thống biết rằng sự kiện đã được xử lý
-//    }
+
     private void addEvents() {
         binding.imvBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,18 +115,26 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
+
                 LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-                int visibleItemCount = layoutManager.getChildCount();
+                int lastVisibleItemPosition = layoutManager.findLastCompletelyVisibleItemPosition();
                 int totalItemCount = layoutManager.getItemCount();
-                int pastVisibleItems = layoutManager.findFirstVisibleItemPosition();
 
-                if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
-                    // RecyclerView đã cuộn tới cuối danh sách
-                    // Thực hiện các hành động bạn muốn ở đây
-                    currentPage++;
-                    getlistcategoryn(danhsach,binding.rcvCateN,currentPage);
+//                if (lastVisibleItemPosition >= totalItemCount - 2){
+//                    //recyclerView.stopScroll();
+//                    getlistcategoryn(danhsach,binding.rcvCateN,currentPage);
+//                }
+                if (lastVisibleItemPosition == totalItemCount - 1) {
+                    if (!isScrolledToEnd) {
+                        // Nếu đây là lần đầu tiên cuộn tới cuối
+                        recyclerView.smoothScrollBy(0, -50);
+                        isScrolledToEnd = true;
+                    } else {
+                        // Nếu người dùng cuộn thêm một lần nữa, thực hiện hành động
+                        getlistcategoryn(danhsach,binding.rcvCateN,currentPage);
+                        isScrolledToEnd = false;
+                    }
                 }
-
             }
         });
     }
@@ -161,11 +153,20 @@ public class CategoryFragment extends Fragment {
 
                         LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
 
-                        MovieHomeCategoryNAdapter adapter = new MovieHomeCategoryNAdapter(movieSearch.getData().getItems(), getContext(),movieSearch.getData().getAPP_DOMAIN_CDN_IMAGE());
+                        if(page==1){
 
-                        rcv.setLayoutManager(manager);
-                        rcv.setAdapter(adapter);
+                            adaptern = new MovieHomeCategoryNAdapter(movieSearch.getData().getItems(), getContext(),movieSearch.getData().getAPP_DOMAIN_CDN_IMAGE());
+                            //adapter.notifyDataSetChanged();
+                            rcv.setLayoutManager(manager);
+                            rcv.setAdapter(adaptern);
+                            currentPage = movieSearch.getData().getParams().getPagination().getCurrentPage()+1;
 
+                        } else if (page <= movieSearch.getData().getParams().getPagination().getTotalPages()) {
+
+                            adaptern.addData(movieSearch.getData().getItems());
+                            //adapter.notifyDataSetChanged();
+                            currentPage = movieSearch.getData().getParams().getPagination().getCurrentPage()+1;
+                        }
                     }
                     catch (Exception e){
                         Log.e("HomeFragment", e.getMessage());
@@ -190,10 +191,10 @@ public class CategoryFragment extends Fragment {
 
                         LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
 
-                        MovieHomeCategoryAdapter adapter = new MovieHomeCategoryAdapter(movieSearch.getData().getItems(), getContext(),movieSearch.getData().getAPP_DOMAIN_CDN_IMAGE());
+                        MovieHomeCategoryAdapter adapterd = new MovieHomeCategoryAdapter(movieSearch.getData().getItems(), getContext(),movieSearch.getData().getAPP_DOMAIN_CDN_IMAGE());
 
                         rcv.setLayoutManager(manager);
-                        rcv.setAdapter(adapter);
+                        rcv.setAdapter(adapterd);
 
                     }
                     catch (Exception e){

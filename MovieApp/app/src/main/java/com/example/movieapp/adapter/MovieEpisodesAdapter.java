@@ -1,6 +1,7 @@
 package com.example.movieapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.movieapp.PlayMovieActivity;
 import com.example.movieapp.R;
 import com.example.movieapp.fragment.MovieDetailFragment;
 import com.example.movieapp.fragment.MoviePlayingFragment;
@@ -49,16 +51,24 @@ public class MovieEpisodesAdapter extends RecyclerView.Adapter<MovieEpisodesAdap
             @Override
             public void onClick(View v) {
 
-                MoviePlayingFragment fragment = new MoviePlayingFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("m3u8", item.getLink_m3u8());
-                fragment.setArguments(bundle);
-
+//                MoviePlayingFragment fragment = new MoviePlayingFragment();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("m3u8", item.getLink_m3u8());
+//                fragment.setArguments(bundle);
+//
+//                FragmentManager manager = ((FragmentActivity) context).getSupportFragmentManager();
+//                FragmentTransaction transaction = manager.beginTransaction();
+//                transaction.replace(R.id.frameLayout, fragment);
+//                transaction.addToBackStack(null);
+//                transaction.commit();
                 FragmentManager manager = ((FragmentActivity) context).getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.frameLayout, fragment);
                 transaction.addToBackStack(null);
-                transaction.commit();
+
+                Intent intent = new Intent(context, PlayMovieActivity.class);
+                intent.putExtra("m3u8", item.getLink_m3u8());
+                context.startActivity(intent);
+
             }
         });
         holder.btnTaiTapPhim.setOnClickListener(new View.OnClickListener() {

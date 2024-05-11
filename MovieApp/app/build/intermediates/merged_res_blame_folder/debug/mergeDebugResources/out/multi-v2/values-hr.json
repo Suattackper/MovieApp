@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.movieapp-mergeDebugResources-44:/values-hr/values-hr.xml",
+            "outputFile": "com.example.movieapp-mergeDebugResources-45:/values-hr/values-hr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\8b2b62be07755da4c607eb02dc8c6d8c\\transformed\\jetified-exoplayer-core-2.19.1\\res\\values-hr\\values-hr.xml",
