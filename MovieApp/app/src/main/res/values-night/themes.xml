@@ -21,12 +21,17 @@
         <item name="android:textAppearance">@color/white</item>
     </style>
 
-<!--    <style name="NetflixAppCloneTheme" parent="Theme.MaterialComponents.Light.NoActionBar">-->
-<!--        <item name="android:windowBackground">@drawable/splash_screen_icon</item>-->
-<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
-<!--        <item name="android:windowNoTitle">true</item>-->
-<!--        <item name="android:windowTranslucentStatus">true</item>-->
-<!--        <item name="android:windowLightStatusBar">false</item>-->
-<!--    </style>-->
+    <style name="ThemeOverlay.MovieApp.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_900</item>
+        <item name="fullscreenTextColor">@color/light_blue_A400</item>
+    </style>
+
+    <!--    <style name="NetflixAppCloneTheme" parent="Theme.MaterialComponents.Light.NoActionBar">-->
+    <!--        <item name="android:windowBackground">@drawable/splash_screen_icon</item>-->
+    <!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
+    <!--        <item name="android:windowNoTitle">true</item>-->
+    <!--        <item name="android:windowTranslucentStatus">true</item>-->
+    <!--        <item name="android:windowLightStatusBar">false</item>-->
+    <!--    </style>-->
 
 </resources>

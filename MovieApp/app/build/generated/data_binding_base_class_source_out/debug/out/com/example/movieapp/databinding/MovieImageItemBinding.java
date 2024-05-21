@@ -4,8 +4,8 @@ package com.example.movieapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -20,11 +20,16 @@ public final class MovieImageItemBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final ImageView imvMovieItem;
+  public final LinearLayout itemLayoutSearch;
 
-  private MovieImageItemBinding(@NonNull LinearLayout rootView, @NonNull ImageView imvMovieItem) {
+  @NonNull
+  public final TextView tvName;
+
+  private MovieImageItemBinding(@NonNull LinearLayout rootView,
+      @NonNull LinearLayout itemLayoutSearch, @NonNull TextView tvName) {
     this.rootView = rootView;
-    this.imvMovieItem = imvMovieItem;
+    this.itemLayoutSearch = itemLayoutSearch;
+    this.tvName = tvName;
   }
 
   @Override
@@ -54,13 +59,15 @@ public final class MovieImageItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.imvMovieItem;
-      ImageView imvMovieItem = ViewBindings.findChildViewById(rootView, id);
-      if (imvMovieItem == null) {
+      LinearLayout itemLayoutSearch = (LinearLayout) rootView;
+
+      id = R.id.tvName;
+      TextView tvName = ViewBindings.findChildViewById(rootView, id);
+      if (tvName == null) {
         break missingId;
       }
 
-      return new MovieImageItemBinding((LinearLayout) rootView, imvMovieItem);
+      return new MovieImageItemBinding((LinearLayout) rootView, itemLayoutSearch, tvName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

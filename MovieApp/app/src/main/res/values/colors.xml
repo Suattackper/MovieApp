@@ -25,8 +25,6 @@
     <color name="gray_200">#e5e7eb</color>
     <color name="gray_300">#d1d5db</color>
     <color name="gray_400">#9ca3af</color>
-    <color name="gray_500">#6E6D6D</color>
-
     <color name="grey_400">#6f6d6e</color>
 
     <color name="stone_900">#1c1917</color>
@@ -59,4 +57,9 @@
 
     <color name="light_grey_400">#36434A</color>
     <color name="light_grey_200">#C2C2C2</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
 </resources>

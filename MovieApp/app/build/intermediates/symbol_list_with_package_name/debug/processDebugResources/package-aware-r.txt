@@ -147,6 +147,7 @@ attr attributeName
 attr autoAdjustToWithinGrandparentBounds
 attr autoCompleteMode
 attr autoCompleteTextViewStyle
+attr autoPlay
 attr autoShowKeyboard
 attr autoSizeMaxTextSize
 attr autoSizeMinTextSize
@@ -238,6 +239,7 @@ attr buttonIconDimen
 attr buttonIconTint
 attr buttonIconTintMode
 attr buttonPanelSideLayout
+attr buttonSize
 attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
@@ -297,6 +299,7 @@ attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
 attr chipSurfaceColor
+attr circleCrop
 attr circleRadius
 attr circularProgressIndicatorStyle
 attr circularflow_angles
@@ -375,6 +378,7 @@ attr colorPrimaryFixedDim
 attr colorPrimaryInverse
 attr colorPrimarySurface
 attr colorPrimaryVariant
+attr colorScheme
 attr colorSecondary
 attr colorSecondaryContainer
 attr colorSecondaryFixed
@@ -486,6 +490,7 @@ attr dividerPadding
 attr dividerThickness
 attr dividerVertical
 attr dragDirection
+attr dragEdge
 attr dragScale
 attr dragThreshold
 attr drawPath
@@ -514,6 +519,7 @@ attr elevationOverlayAccentColor
 attr elevationOverlayColor
 attr elevationOverlayEnabled
 attr emojiCompatEnabled
+attr enableAutomaticInitialization
 attr enableEdgeToEdge
 attr endIconCheckable
 attr endIconContentDescription
@@ -572,6 +578,7 @@ attr fastScrollHorizontalTrackDrawable
 attr fastScrollVerticalThumbDrawable
 attr fastScrollVerticalTrackDrawable
 attr firstBaselineToTopHeight
+attr flingVelocity
 attr floatingActionButtonLargePrimaryStyle
 attr floatingActionButtonLargeSecondaryStyle
 attr floatingActionButtonLargeStyle
@@ -622,6 +629,8 @@ attr forceApplySystemWindowInsetTop
 attr forceDefaultNavigationOnClickListener
 attr foregroundInsidePadding
 attr framePosition
+attr fullscreenBackgroundColor
+attr fullscreenTextColor
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
 attr goIcon
@@ -629,6 +638,7 @@ attr graph
 attr guidelineUseRtl
 attr haloColor
 attr haloRadius
+attr handleNetworkEvents
 attr headerLayout
 attr height
 attr helperText
@@ -662,6 +672,8 @@ attr iconTintMode
 attr iconifiedByDefault
 attr ifTagNotSet
 attr ifTagSet
+attr imageAspectRatio
+attr imageAspectRatioAdjust
 attr imageButtonStyle
 attr imagePanX
 attr imagePanY
@@ -909,6 +921,7 @@ attr menuAlignmentMode
 attr menuGravity
 attr methodName
 attr mimeType
+attr minDistRequestDisallowParent
 attr minHeight
 attr minHideDelay
 attr minSeparation
@@ -920,6 +933,7 @@ attr mock_labelBackgroundColor
 attr mock_labelColor
 attr mock_showDiagonals
 attr mock_showLabel
+attr mode
 attr motionDebug
 attr motionDurationExtraLong1
 attr motionDurationExtraLong2
@@ -1071,6 +1085,7 @@ attr roundPercent
 attr route
 attr saturation
 attr scaleFromTextSize
+attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
 attr scrimVisibleHeightTrigger
@@ -1404,6 +1419,7 @@ attr use_controller
 attr values
 attr verticalOffset
 attr verticalOffsetWithText
+attr videoId
 attr viewInflaterClass
 attr viewTransitionMode
 attr viewTransitionOnCross
@@ -1473,6 +1489,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color black_overlay
 color blue_600
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
@@ -1488,6 +1505,17 @@ color cardview_shadow_end_color
 color cardview_shadow_start_color
 color colorPrimary
 color colorPrimaryDark
+color common_google_signin_btn_text_dark
+color common_google_signin_btn_text_dark_default
+color common_google_signin_btn_text_dark_disabled
+color common_google_signin_btn_text_dark_focused
+color common_google_signin_btn_text_dark_pressed
+color common_google_signin_btn_text_light
+color common_google_signin_btn_text_light_default
+color common_google_signin_btn_text_light_disabled
+color common_google_signin_btn_text_light_focused
+color common_google_signin_btn_text_light_pressed
+color common_google_signin_btn_tint
 color dark_blue_300
 color dark_blue_600
 color design_bottom_navigation_shadow_color
@@ -1555,6 +1583,10 @@ color ic_logo_app_background
 color indigo_500
 color indigo_700
 color light_300
+color light_blue_600
+color light_blue_900
+color light_blue_A200
+color light_blue_A400
 color light_grey_200
 color light_grey_400
 color m3_appbar_overlay_color
@@ -3143,10 +3175,12 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable banner_one
 drawable book
+drawable borderdetailmovie
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
 drawable btn_checkbox_unchecked_to_checked_mtrl_animation
+drawable btn_fullscreen
 drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
@@ -3154,6 +3188,25 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable cancel_btn_background
 drawable cancel_btn_background_v2
 drawable checkbox_toggle_selector
+drawable common_full_open_on_phone
+drawable common_google_signin_btn_icon_dark
+drawable common_google_signin_btn_icon_dark_focused
+drawable common_google_signin_btn_icon_dark_normal
+drawable common_google_signin_btn_icon_dark_normal_background
+drawable common_google_signin_btn_icon_disabled
+drawable common_google_signin_btn_icon_light
+drawable common_google_signin_btn_icon_light_focused
+drawable common_google_signin_btn_icon_light_normal
+drawable common_google_signin_btn_icon_light_normal_background
+drawable common_google_signin_btn_text_dark
+drawable common_google_signin_btn_text_dark_focused
+drawable common_google_signin_btn_text_dark_normal
+drawable common_google_signin_btn_text_dark_normal_background
+drawable common_google_signin_btn_text_disabled
+drawable common_google_signin_btn_text_light
+drawable common_google_signin_btn_text_light_focused
+drawable common_google_signin_btn_text_light_normal
+drawable common_google_signin_btn_text_light_normal_background
 drawable custom_button
 drawable custom_button_log
 drawable custom_google_background
@@ -3249,6 +3302,8 @@ drawable exo_styled_controls_vr
 drawable facebook_logo_icon_48
 drawable facebook_logo_icon_64
 drawable google_logo_icon_48
+drawable googleg_disabled_color_18
+drawable googleg_standard_color_18
 drawable ic_arrow_back
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
@@ -3270,10 +3325,12 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable icon_netflix
 drawable icon_watch_list
+drawable image_item_oval
 drawable indicator_bg
 drawable intro_img_background
 drawable logo_app
 drawable logout_item_background
+drawable lohotan
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3482,6 +3539,8 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id adjust_height
+id adjust_width
 id alertTitle
 id aligned
 id all
@@ -3518,21 +3577,31 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btbtvAnime
+id btbtvPhimBo
+id btbtvPhimLe
+id btbtvTVShows
+id btnAnime
 id btnBookmark
 id btnCreateAcc
+id btnDelete
 id btnDownload
 id btnHome
 id btnInfoMovie
 id btnModeToggle
 id btnMore
 id btnMyList
+id btnPhimBo
+id btnPhimLe
 id btnPlay
 id btnSave
 id btnSearch
 id btnShare
 id btnSignin
 id btnSignup
-id btnStar
+id btnTVShow
+id btnTaiTapPhim
+id btnTapPhim
 id btn_cancel
 id btn_send
 id buttonPanel
@@ -3590,6 +3659,7 @@ id cvImgMovieItem
 id cvMovieDownload
 id cvMovieImg_Home
 id cvTrailerMovie_More
+id dark
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3631,6 +3701,7 @@ id editPassword
 id editPhone
 id editSearch
 id edit_query
+id edtTapPhim
 id elastic
 id embed
 id enabled
@@ -3736,6 +3807,7 @@ id honorRequest
 id horizontal_only
 id icon
 id icon_group
+id icon_only
 id ifRoom
 id ignore
 id ignoreRequest
@@ -3765,15 +3837,21 @@ id invisible
 id inward
 id is_pooling_container_tag
 id italic
+id itemLayout
+id itemLayoutSearch
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layoutXemTapPhim
+id layoutlist
+id layoutsingle
 id left
 id leftToRight
 id left_to_right
 id legacy
+id light
 id line1
 id line3
 id linear
@@ -3925,18 +4003,25 @@ id pvVideoPlaying
 id radial
 id radio
 id ratio
+id rcvAnime
+id rcvCateD
+id rcvCateN
+id rcvDanhSachTap
 id rcvDownload
 id rcvFilterGenreMovie
 id rcvFilterListMovie
-id rcvGenreMovie_More
 id rcvImgMovieDetailList_more
 id rcvListMovieSimilar_More
 id rcvMovieCateList
 id rcvMovieCateList_Home
-id rcvMovieList
+id rcvPhimBo
+id rcvPhimLe
+id rcvPhimMoiCatNhat
 id rcvPlayingMovieList
+id rcvSimilar
+id rcvTVShow
 id rcvTrailerMovie_More
-id rcvViewCast_More
+id rcvWatchList
 id rectangles
 id report_drawn
 id restart
@@ -3950,6 +4035,7 @@ id right_to_left
 id rounded
 id row_index_key
 id runtimeTv
+id same_level
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -4073,28 +4159,42 @@ id transition_transform
 id triangle
 id trimModeLength
 id trimModeLine
+id tvActor
+id tvAnime
 id tvBackButtonLogo
+id tvCate
 id tvChangePass
 id tvCharacter
+id tvDanhSachTap
+id tvDirector
 id tvGenre
 id tvGenreMovie
 id tvItemCate
 id tvLogout
 id tvLogoutDesc
 id tvMovieDate
+id tvName
 id tvNameCast
 id tvOverView_More
 id tvPageTitle
+id tvPhimBo
+id tvPhimLe
+id tvPhimMoiCatNhat
 id tvSeeAll
+id tvSimilar
+id tvTVShows
+id tvTapPhim
 id tvTime
 id tvTitle
 id tvTitleMovie
 id tvTitle_Home
+id tvTrailer
 id tvTrailerDate
 id tvTrailerTitle
 id tvTypeMovie
 id tvUserName
-id tvVoteAverage
+id tvWatchList
+id tvXemTapPhim
 id txtCreateAcc
 id txtForgotPass
 id txtSignin
@@ -4117,6 +4217,7 @@ id visible
 id visible_removing_fragment_view_tag
 id west
 id when_playing
+id wide
 id withText
 id with_icon
 id withinBounds
@@ -4125,6 +4226,7 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
+id ytbPlayer
 id zoom
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -4136,6 +4238,7 @@ integer design_snackbar_text_max_lines
 integer design_tab_indicator_anim_duration_ms
 integer exo_media_button_opacity_percentage_disabled
 integer exo_media_button_opacity_percentage_enabled
+integer google_play_services_version
 integer hide_password_duration
 integer m3_badge_max_number
 integer m3_btn_anim_delay_ms
@@ -4245,6 +4348,7 @@ layout abc_tooltip
 layout activity_forgot_password
 layout activity_login
 layout activity_main
+layout activity_play_movie
 layout activity_register
 layout activity_splash_screen
 layout activity_welcome_screen
@@ -4280,6 +4384,7 @@ layout exo_track_selection_dialog
 layout fragment_cast_detail
 layout fragment_cast_movies
 layout fragment_cast_t_v_shows
+layout fragment_category
 layout fragment_delete_download
 layout fragment_download
 layout fragment_download_dialog
@@ -4325,7 +4430,11 @@ layout material_time_input
 layout material_timepicker
 layout material_timepicker_dialog
 layout material_timepicker_textinput_display
+layout movie_episode_item
 layout movie_image_item
+layout movie_imagedoc_item
+layout movie_imagengang_item
+layout movie_imagengangwatchlist_item
 layout movie_title_category
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -4386,6 +4495,8 @@ mipmap ic_logo_app_round
 plurals exo_controls_fastforward_by_amount_description
 plurals exo_controls_rewind_by_amount_description
 plurals mtrl_badge_content_description
+raw ayp_youtube_player
+raw firebase_common_keep
 raw netflix_logo_anim
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -4442,6 +4553,24 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+string common_google_play_services_enable_button
+string common_google_play_services_enable_text
+string common_google_play_services_enable_title
+string common_google_play_services_install_button
+string common_google_play_services_install_text
+string common_google_play_services_install_title
+string common_google_play_services_notification_channel_name
+string common_google_play_services_notification_ticker
+string common_google_play_services_unknown_issue
+string common_google_play_services_unsupported_text
+string common_google_play_services_update_button
+string common_google_play_services_update_text
+string common_google_play_services_update_title
+string common_google_play_services_updating_text
+string common_google_play_services_wear_update_text
+string common_open_on_phone
+string common_signin_button_text
+string common_signin_button_text_long
 string confirm_log_out
 string continue_watching
 string create_new
@@ -4450,6 +4579,8 @@ string delete
 string delete_message
 string download
 string download_desc
+string dummy_button
+string dummy_content
 string edit_profile
 string email
 string empty_down_desc
@@ -4512,7 +4643,13 @@ string exo_track_unknown
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string firebase_database_url
 string forgot_pass
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string have_acc
 string hello_blank_fragment
 string hide
@@ -4651,6 +4788,7 @@ string path_password_strike_through
 string phone
 string place_of_birth
 string play
+string project_id
 string read_less
 string read_more
 string regis_btn
@@ -4676,6 +4814,7 @@ string start_btn
 string start_up
 string status_bar_notification_info_overflow
 string title
+string title_activity_play_movie
 string title_ct_release
 string trailer_title
 string trailers
@@ -5351,6 +5490,7 @@ style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_MovieApp
+style Theme_MovieApp_Fullscreen
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -5465,6 +5605,7 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display_TextInputEditText
 style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
+style ThemeOverlay_MovieApp_FullscreenContainer
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar
@@ -5841,6 +5982,8 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style Widget_Theme_MovieApp_ActionBar_Fullscreen
+style Widget_Theme_MovieApp_ButtonBar_Fullscreen
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -5904,6 +6047,7 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable Fragment android_name android_id android_tag
 styleable FragmentContainerView android_name android_tag
+styleable FullscreenAttrs fullscreenBackgroundColor fullscreenTextColor
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable ImageFilterView altSrc blendSrc brightness contrast crossfade imagePanX imagePanY imageRotate imageZoom overlay round roundPercent saturation warmth
@@ -5921,6 +6065,7 @@ styleable LinearLayoutCompat android_gravity android_orientation android_baselin
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable LinearProgressIndicator indeterminateAnimationType indicatorDirectionLinear
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
+styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
 styleable LottieAnimationView lottie_asyncUpdates lottie_autoPlay lottie_cacheComposition lottie_clipToCompositionBounds lottie_colorFilter lottie_defaultFontFileExtension lottie_enableMergePathsForKitKatAndAbove lottie_fallbackRes lottie_fileName lottie_ignoreDisabledSystemAnimations lottie_imageAssetsFolder lottie_loop lottie_progress lottie_rawRes lottie_renderMode lottie_repeatCount lottie_repeatMode lottie_speed lottie_url lottie_useCompositionFrameRate
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop backgroundTint
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogButtonSpacerVisibility materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
@@ -5982,6 +6127,7 @@ styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottom
 styleable ShapeableImageView contentPadding contentPaddingBottom contentPaddingEnd contentPaddingLeft contentPaddingRight contentPaddingStart contentPaddingTop shapeAppearance shapeAppearanceOverlay strokeColor strokeWidth
 styleable ShimmerFrameLayout shimmer_auto_start shimmer_base_alpha shimmer_base_color shimmer_clip_to_children shimmer_colored shimmer_direction shimmer_dropoff shimmer_duration shimmer_fixed_height shimmer_fixed_width shimmer_height_ratio shimmer_highlight_alpha shimmer_highlight_color shimmer_intensity shimmer_repeat_count shimmer_repeat_delay shimmer_repeat_mode shimmer_shape shimmer_tilt shimmer_width_ratio
 styleable SideSheetBehavior_Layout android_maxWidth android_maxHeight android_elevation backgroundTint behavior_draggable coplanarSiblingViewId shapeAppearance shapeAppearanceOverlay
+styleable SignInButton buttonSize colorScheme scopeUris
 styleable Slider android_enabled android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle minTouchTargetSize thumbColor thumbElevation thumbRadius thumbStrokeColor thumbStrokeWidth tickColor tickColorActive tickColorInactive tickRadiusActive tickRadiusInactive tickVisible trackColor trackColorActive trackColorInactive trackHeight
 styleable Snackbar snackbarButtonStyle snackbarStyle snackbarTextViewStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha backgroundTint backgroundTintMode elevation maxActionInlineWidth shapeAppearance shapeAppearanceOverlay
@@ -5992,6 +6138,7 @@ styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
 styleable StyledPlayerControlView ad_marker_color ad_marker_width animation_enabled bar_gravity bar_height buffered_color controller_layout_id played_ad_marker_color played_color repeat_toggle_modes scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_fastforward_button show_next_button show_previous_button show_rewind_button show_shuffle_button show_subtitle_button show_timeout show_vr_button time_bar_min_update_interval touch_target_height unplayed_color
 styleable StyledPlayerView ad_marker_color ad_marker_width animation_enabled artwork_display_mode auto_show bar_gravity bar_height buffered_color controller_layout_id default_artwork hide_during_ads hide_on_touch keep_content_on_player_reset played_ad_marker_color played_color player_layout_id repeat_toggle_modes resize_mode scrubber_color scrubber_disabled_size scrubber_dragged_size scrubber_drawable scrubber_enabled_size show_buffering show_shuffle_button show_subtitle_button show_timeout show_vr_button shutter_background_color surface_type time_bar_min_update_interval touch_target_height unplayed_color use_artwork use_controller
+styleable SwipeRevealLayout dragEdge flingVelocity minDistRequestDisallowParent mode
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text
@@ -6011,6 +6158,7 @@ styleable ViewBackgroundHelper android_background backgroundTint backgroundTintM
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
+styleable YouTubePlayerView autoPlay enableAutomaticInitialization handleNetworkEvents videoId
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules

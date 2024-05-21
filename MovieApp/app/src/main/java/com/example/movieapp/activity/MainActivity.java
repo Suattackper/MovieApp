@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        replaceFragmentUI(new SearchFragment());
+
+
+        replaceFragmentUI(new HomeFragment());
         addEventsOnClick();
 
     }
@@ -46,21 +48,21 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragmentUI(new SearchFragment());
             }
             else if (itemID == R.id.btnDownload) {
-                replaceFragmentUI(new DownloadFragment());
-            }
-            else if (itemID == R.id.btnMore) {
                 replaceFragmentUI(new WatchListFragment());
             }
-
+            else if (itemID == R.id.btnMore) {
+                replaceFragmentUI(new MoreFragment());
+            }
             return true;
         });
 
     }
 
     public void replaceFragmentUI (Fragment fragment) {
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
+//        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frameLayout, fragment);
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 }
