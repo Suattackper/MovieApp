@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.chauthai.swipereveallayout.SwipeRevealLayout;
 import com.example.movieapp.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -19,33 +18,33 @@ import java.lang.String;
 
 public final class MovieImagengangwatchlistItemBinding implements ViewBinding {
   @NonNull
-  private final SwipeRevealLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final LinearLayout btnDelete;
+  public final ImageView btnDelete;
 
   @NonNull
   public final ImageView imvMovieItem;
 
   @NonNull
-  public final LinearLayout itemLayout;
+  public final LinearLayout lnMovieInfo;
 
   @NonNull
   public final TextView tvName;
 
-  private MovieImagengangwatchlistItemBinding(@NonNull SwipeRevealLayout rootView,
-      @NonNull LinearLayout btnDelete, @NonNull ImageView imvMovieItem,
-      @NonNull LinearLayout itemLayout, @NonNull TextView tvName) {
+  private MovieImagengangwatchlistItemBinding(@NonNull LinearLayout rootView,
+      @NonNull ImageView btnDelete, @NonNull ImageView imvMovieItem,
+      @NonNull LinearLayout lnMovieInfo, @NonNull TextView tvName) {
     this.rootView = rootView;
     this.btnDelete = btnDelete;
     this.imvMovieItem = imvMovieItem;
-    this.itemLayout = itemLayout;
+    this.lnMovieInfo = lnMovieInfo;
     this.tvName = tvName;
   }
 
   @Override
   @NonNull
-  public SwipeRevealLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -71,7 +70,7 @@ public final class MovieImagengangwatchlistItemBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnDelete;
-      LinearLayout btnDelete = ViewBindings.findChildViewById(rootView, id);
+      ImageView btnDelete = ViewBindings.findChildViewById(rootView, id);
       if (btnDelete == null) {
         break missingId;
       }
@@ -82,9 +81,9 @@ public final class MovieImagengangwatchlistItemBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.itemLayout;
-      LinearLayout itemLayout = ViewBindings.findChildViewById(rootView, id);
-      if (itemLayout == null) {
+      id = R.id.lnMovieInfo;
+      LinearLayout lnMovieInfo = ViewBindings.findChildViewById(rootView, id);
+      if (lnMovieInfo == null) {
         break missingId;
       }
 
@@ -94,8 +93,8 @@ public final class MovieImagengangwatchlistItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new MovieImagengangwatchlistItemBinding((SwipeRevealLayout) rootView, btnDelete,
-          imvMovieItem, itemLayout, tvName);
+      return new MovieImagengangwatchlistItemBinding((LinearLayout) rootView, btnDelete,
+          imvMovieItem, lnMovieInfo, tvName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

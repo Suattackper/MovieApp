@@ -60,20 +60,12 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\layout\\layout_item_movie_detail_trailers.xml"
     },
     {
-        "merged": "com.example.movieapp-mergeDebugResources-51:/layout/fragment_movie_detail.xml",
-        "source": "com.example.movieapp-main-54:/layout/fragment_movie_detail.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-51:\\layout\\layout_item_movie_similar.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\layout\\layout_item_movie_similar.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-51:\\layout\\movie_imagengang_item.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\layout\\movie_imagengang_item.xml"
-    },
-    {
-        "merged": "com.example.movieapp-mergeDebugResources-51:/layout/fragment_home.xml",
-        "source": "com.example.movieapp-main-54:/layout/fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-51:\\layout\\activity_main.xml",
@@ -102,6 +94,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-51:\\layout\\activity_splash_screen.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\layout\\activity_splash_screen.xml"
+    },
+    {
+        "merged": "com.example.movieapp-mergeDebugResources-51:/layout/fragment_delete_download.xml",
+        "source": "com.example.movieapp-main-54:/layout/fragment_delete_download.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-51:\\layout\\fragment_download.xml",

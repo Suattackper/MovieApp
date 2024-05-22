@@ -20,6 +20,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\layout\\fragment_similar.xml"
     },
     {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-52:\\anim_dialog_delete_watchlist_out.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\anim\\dialog_delete_watchlist_out.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-52:\\drawable_round_cloud_download_24.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\drawable\\round_cloud_download_24.xml"
     },
@@ -232,6 +236,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "com.example.movieapp-debug-52:/layout_fragment_delete_download.xml.flat",
+        "source": "com.example.movieapp-main-54:/layout/fragment_delete_download.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-52:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
@@ -284,12 +292,12 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\drawable\\icon_netflix.png"
     },
     {
-        "merged": "com.example.movieapp-debug-52:/layout_fragment_movie_detail.xml.flat",
-        "source": "com.example.movieapp-main-54:/layout/fragment_movie_detail.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-52:\\layout_fragment_category.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\layout\\fragment_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-52:\\anim_dialog_delete_watchlist_in.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\anim\\dialog_delete_watchlist_in.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-52:\\layout_layout_item_genre.xml.flat",
@@ -546,10 +554,6 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-52:\\drawable_mountain_forest_clouds.png.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-54:\\drawable\\mountain_forest_clouds.png"
-    },
-    {
-        "merged": "com.example.movieapp-debug-52:/layout_fragment_home.xml.flat",
-        "source": "com.example.movieapp-main-54:/layout/fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-52:\\font_googlesans_mediumitalic.ttf.flat",

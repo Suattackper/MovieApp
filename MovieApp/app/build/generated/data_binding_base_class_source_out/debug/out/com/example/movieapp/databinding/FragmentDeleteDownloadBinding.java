@@ -26,25 +26,13 @@ public final class FragmentDeleteDownloadBinding implements ViewBinding {
   public final AppCompatButton btnCancel;
 
   @NonNull
-  public final AppCompatButton btnSend;
+  public final AppCompatButton btnXacnhan;
 
   @NonNull
   public final MaterialCardView cardView;
 
   @NonNull
-  public final MaterialCardView filterButton;
-
-  @NonNull
   public final ImageView imageView;
-
-  @NonNull
-  public final ImageView playBtn;
-
-  @NonNull
-  public final TextView runtimeTv;
-
-  @NonNull
-  public final TextView sizeTV;
 
   @NonNull
   public final TextView title;
@@ -53,19 +41,14 @@ public final class FragmentDeleteDownloadBinding implements ViewBinding {
   public final TextView titleTv;
 
   private FragmentDeleteDownloadBinding(@NonNull LinearLayout rootView,
-      @NonNull AppCompatButton btnCancel, @NonNull AppCompatButton btnSend,
-      @NonNull MaterialCardView cardView, @NonNull MaterialCardView filterButton,
-      @NonNull ImageView imageView, @NonNull ImageView playBtn, @NonNull TextView runtimeTv,
-      @NonNull TextView sizeTV, @NonNull TextView title, @NonNull TextView titleTv) {
+      @NonNull AppCompatButton btnCancel, @NonNull AppCompatButton btnXacnhan,
+      @NonNull MaterialCardView cardView, @NonNull ImageView imageView, @NonNull TextView title,
+      @NonNull TextView titleTv) {
     this.rootView = rootView;
     this.btnCancel = btnCancel;
-    this.btnSend = btnSend;
+    this.btnXacnhan = btnXacnhan;
     this.cardView = cardView;
-    this.filterButton = filterButton;
     this.imageView = imageView;
-    this.playBtn = playBtn;
-    this.runtimeTv = runtimeTv;
-    this.sizeTV = sizeTV;
     this.title = title;
     this.titleTv = titleTv;
   }
@@ -103,9 +86,9 @@ public final class FragmentDeleteDownloadBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btn_send;
-      AppCompatButton btnSend = ViewBindings.findChildViewById(rootView, id);
-      if (btnSend == null) {
+      id = R.id.btn_xacnhan;
+      AppCompatButton btnXacnhan = ViewBindings.findChildViewById(rootView, id);
+      if (btnXacnhan == null) {
         break missingId;
       }
 
@@ -115,33 +98,9 @@ public final class FragmentDeleteDownloadBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.filterButton;
-      MaterialCardView filterButton = ViewBindings.findChildViewById(rootView, id);
-      if (filterButton == null) {
-        break missingId;
-      }
-
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
-        break missingId;
-      }
-
-      id = R.id.playBtn;
-      ImageView playBtn = ViewBindings.findChildViewById(rootView, id);
-      if (playBtn == null) {
-        break missingId;
-      }
-
-      id = R.id.runtimeTv;
-      TextView runtimeTv = ViewBindings.findChildViewById(rootView, id);
-      if (runtimeTv == null) {
-        break missingId;
-      }
-
-      id = R.id.sizeTV;
-      TextView sizeTV = ViewBindings.findChildViewById(rootView, id);
-      if (sizeTV == null) {
         break missingId;
       }
 
@@ -157,8 +116,8 @@ public final class FragmentDeleteDownloadBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentDeleteDownloadBinding((LinearLayout) rootView, btnCancel, btnSend,
-          cardView, filterButton, imageView, playBtn, runtimeTv, sizeTV, title, titleTv);
+      return new FragmentDeleteDownloadBinding((LinearLayout) rootView, btnCancel, btnXacnhan,
+          cardView, imageView, title, titleTv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

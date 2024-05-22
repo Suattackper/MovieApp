@@ -27,6 +27,8 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim dialog_delete_watchlist_in
+anim dialog_delete_watchlist_out
 anim fragment_fast_out_extra_slow_in
 anim linear_indeterminate_line1_head_interpolator
 anim linear_indeterminate_line1_tail_interpolator
@@ -3604,6 +3606,7 @@ id btnTaiTapPhim
 id btnTapPhim
 id btn_cancel
 id btn_send
+id btn_xacnhan
 id buttonPanel
 id cache_measures
 id callMeasure

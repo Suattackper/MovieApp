@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+anim dialog_delete_watchlist_in
+anim dialog_delete_watchlist_out
 attr? fullscreenBackgroundColor
 attr? fullscreenTextColor
 color amber_200
@@ -177,6 +179,7 @@ id btnTaiTapPhim
 id btnTapPhim
 id btn_cancel
 id btn_send
+id btn_xacnhan
 id cancelBtn
 id cardView
 id cbGenre

@@ -53,7 +53,7 @@ public class MovieHomeCategoryNAdapter extends RecyclerView.Adapter<MovieHomeCat
         String imageUrl = domainimage + "/" + item.getThumb_url();
         Picasso.get().load(imageUrl).into(holder.imvMovieItem);
 
-        holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+        holder.imvMovieItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -80,13 +80,13 @@ public class MovieHomeCategoryNAdapter extends RecyclerView.Adapter<MovieHomeCat
 
     public class MovieHomeCategoryNAdapterHolder extends RecyclerView.ViewHolder {
         ImageView imvMovieItem;
-        LinearLayout itemLayout;
+//        LinearLayout itemLayout;
         TextView tvName;
         public MovieHomeCategoryNAdapterHolder(@NonNull View itemView) {
             super(itemView);
             imvMovieItem = itemView.findViewById(R.id.imvMovieItem);
             tvName = itemView.findViewById(R.id.tvName);
-            itemLayout = itemView.findViewById(R.id.itemLayout);
+//            itemLayout = itemView.findViewById(R.id.itemLayout);
 
         }
     }

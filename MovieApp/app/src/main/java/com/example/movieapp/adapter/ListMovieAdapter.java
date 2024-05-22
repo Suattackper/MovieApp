@@ -6,11 +6,18 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -63,7 +70,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
 
         holder.tvName.setText(item.getName());
 
-        holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+        holder.imvMovieItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -84,12 +91,59 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Account/" + index);
-                account.getAccountList().remove(position);
-                myRef.setValue(account);
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                View dialogView = LayoutInflater.from(context).inflate(R.layout.fragment_delete_download, null);
+                builder.setView(dialogView);
 
-                listDetails.remove(position);
-                notifyDataSetChanged();
+                ImageView imageView = dialogView.findViewById(R.id.imageView);
+                TextView textView = dialogView.findViewById(R.id.titleTv);
+                String imageUrl = item.getThumbUrl();
+                Picasso.get().load(imageUrl).into(imageView);
+                textView.setText(item.getName());
+
+                AlertDialog alertDialog = builder.create();
+                // Load animations
+                Animation fadeIn = AnimationUtils.loadAnimation(context, R.anim.dialog_delete_watchlist_in);
+                Animation fadeOut = AnimationUtils.loadAnimation(context, R.anim.dialog_delete_watchlist_out);
+                alertDialog.setOnShowListener(dialog -> dialogView.startAnimation(fadeIn));
+
+
+                Button btnCancel = dialogView.findViewById(R.id.btn_cancel);
+                Button btnConfirm = dialogView.findViewById(R.id.btn_xacnhan);
+
+                btnCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+
+                btnConfirm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Account/" + index);
+                        account.getAccountList().remove(position);
+                        myRef.setValue(account);
+
+                        listDetails.remove(position);
+                        notifyDataSetChanged();
+                        alertDialog.dismiss();
+                    }
+                });
+
+                Window window = alertDialog.getWindow();
+                if (window != null) {
+                    window.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                    WindowManager.LayoutParams layoutParams = window.getAttributes();
+                    layoutParams.gravity = Gravity.BOTTOM;
+                    layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+                    window.setAttributes(layoutParams);
+                }
+
+                alertDialog.show();
+
+
+
             }
         });
 
@@ -102,13 +156,11 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
 
     public static class ListMovieAdapterHolder extends RecyclerView.ViewHolder {
         ImageView imvMovieItem;
-        LinearLayout itemLayout;
         TextView tvName;
-        LinearLayout btnDelete;
+        ImageView btnDelete;
         public ListMovieAdapterHolder(@NonNull View itemView) {
             super(itemView);
             imvMovieItem = itemView.findViewById(R.id.imvMovieItem);
-            itemLayout = itemView.findViewById(R.id.itemLayout);
             btnDelete = itemView.findViewById(R.id.btnDelete);
             tvName = itemView.findViewById(R.id.tvName);
         }

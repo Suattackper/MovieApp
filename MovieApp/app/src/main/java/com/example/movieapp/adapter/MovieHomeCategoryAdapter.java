@@ -44,7 +44,7 @@ public class MovieHomeCategoryAdapter extends RecyclerView.Adapter<MovieHomeCate
         String imageUrl = domainimage + "/" + item.getPoster_url();
         Picasso.get().load(imageUrl).into(holder.imvMovieItem);
 
-        holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+        holder.imvMovieItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

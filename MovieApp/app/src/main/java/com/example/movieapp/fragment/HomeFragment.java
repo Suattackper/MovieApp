@@ -253,6 +253,10 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(getContext(), "Vui lòng đợi tải dữ liệu hoàn thành!", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if(item.getSlug().equals("")) {
+                    Toast.makeText(getContext(), "Dữ liệu có vấn đề!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 MovieDetailFragment fragment = new MovieDetailFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("slug", item.getSlug());
@@ -271,6 +275,10 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 if(item.getSlug()==null) {
                     Toast.makeText(getContext(), "Vui lòng đợi tải dữ liệu hoàn thành!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(item.getSlug().equals("")) {
+                    Toast.makeText(getContext(), "Dữ liệu có vấn đề!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 ApiService.apiService.getMovieBySlug(item.getSlug()).enqueue(new Callback<MovieDetail>() {
