@@ -1,1 +1,3 @@
+# Bỏ qua tất cả các tệp có kích thước lớn
+*.apk
 MovieApp/app/build/intermediates/apk/debug/app-debug.apk !text !filter !merge !diff
