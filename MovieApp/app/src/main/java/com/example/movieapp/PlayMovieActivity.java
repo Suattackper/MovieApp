@@ -3,13 +3,11 @@ package com.example.movieapp;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.movieapp.databinding.ActivityPlayMovieBinding;
 import com.google.android.exoplayer2.ExoPlayer;
@@ -32,6 +30,9 @@ public class PlayMovieActivity extends AppCompatActivity {
 
         binding = ActivityPlayMovieBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // Ẩn thanh điều hướng
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         // Lấy dữ liệu extra
         String data = getIntent().getStringExtra("m3u8");

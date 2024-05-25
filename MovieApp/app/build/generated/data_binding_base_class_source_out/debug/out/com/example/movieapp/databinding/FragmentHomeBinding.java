@@ -25,6 +25,18 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final NestedScrollView rootView;
 
   @NonNull
+  public final TextView btbtvAnime;
+
+  @NonNull
+  public final TextView btbtvPhimBo;
+
+  @NonNull
+  public final TextView btbtvPhimLe;
+
+  @NonNull
+  public final TextView btbtvTVShows;
+
+  @NonNull
   public final TextView btnAnime;
 
   @NonNull
@@ -55,9 +67,6 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ConstraintLayout cstNav;
 
   @NonNull
-  public final LinearLayout filterLayout;
-
-  @NonNull
   public final ImageView imvBanner;
 
   @NonNull
@@ -71,9 +80,6 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @NonNull
   public final RecyclerView rcvAnime;
-
-  @NonNull
-  public final RecyclerView rcvFilterGenreMovie;
 
   @NonNull
   public final RecyclerView rcvPhimBo;
@@ -100,21 +106,25 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView tvPhimMoiCatNhat;
 
   @NonNull
-  public final TextView tvTCShow;
+  public final TextView tvTVShows;
 
-  private FragmentHomeBinding(@NonNull NestedScrollView rootView, @NonNull TextView btnAnime,
-      @NonNull MaterialButton btnInfoMovie, @NonNull MaterialButton btnMyList,
-      @NonNull TextView btnPhimBo, @NonNull TextView btnPhimLe, @NonNull TextView btnTVShow,
-      @NonNull ConstraintLayout cstButton, @NonNull ConstraintLayout cstHeader,
-      @NonNull ConstraintLayout cstLayoutListMovie, @NonNull ConstraintLayout cstNav,
-      @NonNull LinearLayout filterLayout, @NonNull ImageView imvBanner,
-      @NonNull ImageView imvLogoApp, @NonNull ImageView imvUserAvatar,
-      @NonNull LinearLayout playBtn, @NonNull RecyclerView rcvAnime,
-      @NonNull RecyclerView rcvFilterGenreMovie, @NonNull RecyclerView rcvPhimBo,
+  private FragmentHomeBinding(@NonNull NestedScrollView rootView, @NonNull TextView btbtvAnime,
+      @NonNull TextView btbtvPhimBo, @NonNull TextView btbtvPhimLe, @NonNull TextView btbtvTVShows,
+      @NonNull TextView btnAnime, @NonNull MaterialButton btnInfoMovie,
+      @NonNull MaterialButton btnMyList, @NonNull TextView btnPhimBo, @NonNull TextView btnPhimLe,
+      @NonNull TextView btnTVShow, @NonNull ConstraintLayout cstButton,
+      @NonNull ConstraintLayout cstHeader, @NonNull ConstraintLayout cstLayoutListMovie,
+      @NonNull ConstraintLayout cstNav, @NonNull ImageView imvBanner, @NonNull ImageView imvLogoApp,
+      @NonNull ImageView imvUserAvatar, @NonNull LinearLayout playBtn,
+      @NonNull RecyclerView rcvAnime, @NonNull RecyclerView rcvPhimBo,
       @NonNull RecyclerView rcvPhimLe, @NonNull RecyclerView rcvPhimMoiCatNhat,
       @NonNull RecyclerView rcvTVShow, @NonNull TextView tvAnime, @NonNull TextView tvPhimBo,
-      @NonNull TextView tvPhimLe, @NonNull TextView tvPhimMoiCatNhat, @NonNull TextView tvTCShow) {
+      @NonNull TextView tvPhimLe, @NonNull TextView tvPhimMoiCatNhat, @NonNull TextView tvTVShows) {
     this.rootView = rootView;
+    this.btbtvAnime = btbtvAnime;
+    this.btbtvPhimBo = btbtvPhimBo;
+    this.btbtvPhimLe = btbtvPhimLe;
+    this.btbtvTVShows = btbtvTVShows;
     this.btnAnime = btnAnime;
     this.btnInfoMovie = btnInfoMovie;
     this.btnMyList = btnMyList;
@@ -125,13 +135,11 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.cstHeader = cstHeader;
     this.cstLayoutListMovie = cstLayoutListMovie;
     this.cstNav = cstNav;
-    this.filterLayout = filterLayout;
     this.imvBanner = imvBanner;
     this.imvLogoApp = imvLogoApp;
     this.imvUserAvatar = imvUserAvatar;
     this.playBtn = playBtn;
     this.rcvAnime = rcvAnime;
-    this.rcvFilterGenreMovie = rcvFilterGenreMovie;
     this.rcvPhimBo = rcvPhimBo;
     this.rcvPhimLe = rcvPhimLe;
     this.rcvPhimMoiCatNhat = rcvPhimMoiCatNhat;
@@ -140,7 +148,7 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.tvPhimBo = tvPhimBo;
     this.tvPhimLe = tvPhimLe;
     this.tvPhimMoiCatNhat = tvPhimMoiCatNhat;
-    this.tvTCShow = tvTCShow;
+    this.tvTVShows = tvTVShows;
   }
 
   @Override
@@ -170,6 +178,30 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btbtvAnime;
+      TextView btbtvAnime = ViewBindings.findChildViewById(rootView, id);
+      if (btbtvAnime == null) {
+        break missingId;
+      }
+
+      id = R.id.btbtvPhimBo;
+      TextView btbtvPhimBo = ViewBindings.findChildViewById(rootView, id);
+      if (btbtvPhimBo == null) {
+        break missingId;
+      }
+
+      id = R.id.btbtvPhimLe;
+      TextView btbtvPhimLe = ViewBindings.findChildViewById(rootView, id);
+      if (btbtvPhimLe == null) {
+        break missingId;
+      }
+
+      id = R.id.btbtvTVShows;
+      TextView btbtvTVShows = ViewBindings.findChildViewById(rootView, id);
+      if (btbtvTVShows == null) {
+        break missingId;
+      }
+
       id = R.id.btnAnime;
       TextView btnAnime = ViewBindings.findChildViewById(rootView, id);
       if (btnAnime == null) {
@@ -230,12 +262,6 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.filterLayout;
-      LinearLayout filterLayout = ViewBindings.findChildViewById(rootView, id);
-      if (filterLayout == null) {
-        break missingId;
-      }
-
       id = R.id.imvBanner;
       ImageView imvBanner = ViewBindings.findChildViewById(rootView, id);
       if (imvBanner == null) {
@@ -263,12 +289,6 @@ public final class FragmentHomeBinding implements ViewBinding {
       id = R.id.rcvAnime;
       RecyclerView rcvAnime = ViewBindings.findChildViewById(rootView, id);
       if (rcvAnime == null) {
-        break missingId;
-      }
-
-      id = R.id.rcvFilterGenreMovie;
-      RecyclerView rcvFilterGenreMovie = ViewBindings.findChildViewById(rootView, id);
-      if (rcvFilterGenreMovie == null) {
         break missingId;
       }
 
@@ -320,17 +340,17 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvTCShow;
-      TextView tvTCShow = ViewBindings.findChildViewById(rootView, id);
-      if (tvTCShow == null) {
+      id = R.id.tvTVShows;
+      TextView tvTVShows = ViewBindings.findChildViewById(rootView, id);
+      if (tvTVShows == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((NestedScrollView) rootView, btnAnime, btnInfoMovie, btnMyList,
-          btnPhimBo, btnPhimLe, btnTVShow, cstButton, cstHeader, cstLayoutListMovie, cstNav,
-          filterLayout, imvBanner, imvLogoApp, imvUserAvatar, playBtn, rcvAnime,
-          rcvFilterGenreMovie, rcvPhimBo, rcvPhimLe, rcvPhimMoiCatNhat, rcvTVShow, tvAnime,
-          tvPhimBo, tvPhimLe, tvPhimMoiCatNhat, tvTCShow);
+      return new FragmentHomeBinding((NestedScrollView) rootView, btbtvAnime, btbtvPhimBo,
+          btbtvPhimLe, btbtvTVShows, btnAnime, btnInfoMovie, btnMyList, btnPhimBo, btnPhimLe,
+          btnTVShow, cstButton, cstHeader, cstLayoutListMovie, cstNav, imvBanner, imvLogoApp,
+          imvUserAvatar, playBtn, rcvAnime, rcvPhimBo, rcvPhimLe, rcvPhimMoiCatNhat, rcvTVShow,
+          tvAnime, tvPhimBo, tvPhimLe, tvPhimMoiCatNhat, tvTVShows);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

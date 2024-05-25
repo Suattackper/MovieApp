@@ -1,41 +1,31 @@
 package com.example.movieapp.fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.airbnb.lottie.L;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.movieapp.PlayMovieActivity;
-import com.example.movieapp.R;
 import com.example.movieapp.adapter.MovieEpisodesAdapter;
-import com.example.movieapp.adapter.MovieSearchItemAdapter;
 import com.example.movieapp.api.ApiService;
 import com.example.movieapp.databinding.FragmentMovieDetailBinding;
-import com.example.movieapp.databinding.FragmentSearchBinding;
+import com.example.movieapp.model.WatchList;
 import com.example.movieapp.model.Category;
 import com.example.movieapp.model.MovieDetail;
-import com.example.movieapp.model.MovieSearch;
 import com.example.movieapp.model.ServerData;
-import com.google.android.exoplayer2.ExoPlayer;
-import com.google.android.exoplayer2.MediaItem;
-import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -53,6 +43,7 @@ public class MovieDetailFragment extends Fragment {
     FragmentMovieDetailBinding binding;
     String m3u8 = "";
     List<ServerData> serverData;
+    MovieDetail moviedetail = new MovieDetail();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -107,7 +98,14 @@ public class MovieDetailFragment extends Fragment {
         if (bundle != null) {
             String slug = bundle.getString("slug");
 
-            getDataMovie(slug);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    getDataMovie(slug);
+                }
+            }).start();
+
+//            getDataMovie(slug);
             addEvent();
         }
         return  view;
@@ -165,7 +163,34 @@ public class MovieDetailFragment extends Fragment {
                 else Toast.makeText(getContext(), "Tập phim không tồn tại", Toast.LENGTH_SHORT).show();
             }
         });
+        binding.btnBookmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Nhận chuỗi JSON từ SharedPreferences
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                String accountid = sharedPreferences.getString("accountid", "");
+
+                WatchList watchList = new WatchList(moviedetail.getMovie().getName(),moviedetail.getMovie().getSlug(),moviedetail.getMovie().getThumb_url(),accountid);
+
+                ApiService.apiServiceLocal.addWatchList(watchList).enqueue(new Callback<WatchList>() {
+                    @Override
+                    public void onResponse(Call<WatchList> call, Response<WatchList> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(getContext(), "Đã thêm vào Watch List!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getContext(), "Phim đã có trong Watch List!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<WatchList> call, Throwable throwable) {
+                        Toast.makeText(getContext(), "Lỗi API, add Watch List!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
     }
+
     private void shareContent() {
         // Code chia sẻ nội dung tương tự như trong Activity
         Intent sharingIntent = new Intent(Intent.ACTION_SEND);
@@ -183,7 +208,11 @@ public class MovieDetailFragment extends Fragment {
             public void onResponse(Call<MovieDetail> call, Response<MovieDetail> response) {
                 if (response.isSuccessful()) {
                     try {
-                        MovieDetail moviedetail = response.body();
+                        moviedetail = response.body();
+
+                        //set image bằng picasso
+                        String imageUrl = moviedetail.getMovie().getThumb_url();
+                        Picasso.get().load(imageUrl).into(binding.imvBackDrop);
 
                         serverData = moviedetail.getEpisodes().get(0).getServer_data();
                         String nam = "Năm phát hành: " + String.valueOf(moviedetail.getMovie().getYear()) + "\n";
@@ -220,9 +249,6 @@ public class MovieDetailFragment extends Fragment {
                         //m3u8 = moviedetail.getEpisodes().get(0).getServer_data().get(0).getLink_m3u8();
 
                         binding.tvTime.setText(nam);
-                        //set image bằng picasso
-                        String imageUrl = moviedetail.getMovie().getThumb_url();
-                        Picasso.get().load(imageUrl).into(binding.imvBackDrop);
                         binding.titleMovieName.setText(moviedetail.getMovie().getName());
                         String cate = "";
                         int size = moviedetail.getMovie().getCategory().size();
@@ -292,13 +318,13 @@ public class MovieDetailFragment extends Fragment {
                         Log.e("SearchFragment", e.getMessage());
                     }
                 } else {
-                    Toast.makeText(getContext(), "Có lỗi xảy ra", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Có lỗi xảy ral", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<MovieDetail> call, Throwable throwable) {
-                Toast.makeText(getContext(), "Có lỗi xảy ra", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Có lỗi xảy rla", Toast.LENGTH_SHORT).show();
                 getActivity().onBackPressed();
             }
         });

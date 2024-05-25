@@ -16,12 +16,12 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_category.xml"
     },
     {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_notification_item_backgound.xml.flat",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\notification_item_backgound.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_rounded_filter_list_24.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\rounded_filter_list_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_notification_item_backgound.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\notification_item_backgound.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\raw_netflix_logo_anim.json.flat",
@@ -344,6 +344,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_download_dialog.xml"
     },
     {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\anim_dialog_delete_watchlist_in.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\anim\\dialog_delete_watchlist_in.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_icon_netflix.png.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\icon_netflix.png"
     },
@@ -416,12 +420,12 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\mountain_winter.png"
     },
     {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_movie_playing.xml.flat",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_movie_playing.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_movie_playing.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_movie_playing.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_cast_movies.xml.flat",
@@ -500,6 +504,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\cancel_btn_background.xml"
     },
     {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\anim_dialog_delete_watchlist_out.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\anim\\dialog_delete_watchlist_out.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\xml\\data_extraction_rules.xml"
     },
@@ -528,8 +536,8 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_trailer.xml"
     },
     {
-        "merged": "com.example.movieapp-debug-47:/layout_layout_item_movie_detail_trailers.xml.flat",
-        "source": "com.example.movieapp-main-49:/layout/layout_item_movie_detail_trailers.xml"
+        "merged": "com.example.movieapp-debug-47:/layout_fragment_movie_detail.xml.flat",
+        "source": "com.example.movieapp-main-49:/layout/fragment_movie_detail.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_rounded_account_box_24.xml.flat",
@@ -566,6 +574,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_placeholder_background.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\placeholder_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_movie_imagengangwatchlist_item.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\movie_imagengangwatchlist_item.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_ic_edit.xml.flat",

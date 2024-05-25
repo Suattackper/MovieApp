@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -33,19 +32,19 @@ public class MovieHomeAdapter extends RecyclerView.Adapter<MovieHomeAdapter.Movi
 
     @NonNull
     @Override
-    public MovieHomeAdapter.MovieHomeAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MovieHomeAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_imagedoc_item, parent, false);
         return new MovieHomeAdapterHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieHomeAdapter.MovieHomeAdapterHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MovieHomeAdapterHolder holder, int position) {
         Item item = listItem.get(position);
 
         String imageUrl = item.getPoster_url();
         Picasso.get().load(imageUrl).into(holder.imvMovieItem);
 
-        holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+        holder.imvMovieItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

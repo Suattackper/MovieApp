@@ -1,29 +1,22 @@
 package com.example.movieapp;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.movieapp.adapter.MovieHomeCategoryAdapter;
 import com.example.movieapp.adapter.MovieHomeCategoryNAdapter;
 import com.example.movieapp.api.ApiService;
 import com.example.movieapp.databinding.FragmentCategoryBinding;
-import com.example.movieapp.databinding.FragmentHomeBinding;
 import com.example.movieapp.model.MovieSearch;
-import com.google.android.exoplayer2.MediaItem;
-import com.google.android.exoplayer2.SimpleExoPlayer;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -125,23 +118,37 @@ public class CategoryFragment extends Fragment {
 //                    getlistcategoryn(danhsach,binding.rcvCateN,currentPage);
 //                }
                 if (lastVisibleItemPosition == totalItemCount - 1) {
-                    if (!isScrolledToEnd) {
-                        // Nếu đây là lần đầu tiên cuộn tới cuối
-                        recyclerView.smoothScrollBy(0, -50);
-                        isScrolledToEnd = true;
-                    } else {
-                        // Nếu người dùng cuộn thêm một lần nữa, thực hiện hành động
-                        getlistcategoryn(danhsach,binding.rcvCateN,currentPage);
-                        isScrolledToEnd = false;
-                    }
+                    recyclerView.stopScroll();
+                    getlistcategoryn(danhsach,binding.rcvCateN,currentPage);
+//                    if (!isScrolledToEnd) {
+//                        // Nếu đây là lần đầu tiên cuộn tới cuối
+//                        recyclerView.smoothScrollBy(0, -50);
+//                        isScrolledToEnd = true;
+//                    } else {
+//                        // Nếu người dùng cuộn thêm một lần nữa, thực hiện hành động
+//                        getlistcategoryn(danhsach,binding.rcvCateN,currentPage);
+//                        isScrolledToEnd = false;
+//                    }
                 }
             }
         });
     }
 
     private void getData(String danhsach) {
-        getlistcategoryd(danhsach,binding.rcvCateD);
-        getlistcategoryn(danhsach,binding.rcvCateN,currentPage);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getlistcategoryd(danhsach,binding.rcvCateD);
+            }
+        }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getlistcategoryn(danhsach,binding.rcvCateN,currentPage);
+            }
+        }).start();
+//        getlistcategoryd(danhsach,binding.rcvCateD);
+//        getlistcategoryn(danhsach,binding.rcvCateN,currentPage);
     }
     private void getlistcategoryn(String s, RecyclerView rcv, int page) {
         ApiService.apiService.getMovieListCategory(s,page).enqueue(new Callback<MovieSearch>() {

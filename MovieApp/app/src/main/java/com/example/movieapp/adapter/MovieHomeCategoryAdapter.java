@@ -32,19 +32,19 @@ public class MovieHomeCategoryAdapter extends RecyclerView.Adapter<MovieHomeCate
     }
     @NonNull
     @Override
-    public MovieHomeCategoryAdapter.MovieHomeCategoryAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MovieHomeCategoryAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_imagedoc_item, parent, false);
-        return new MovieHomeCategoryAdapter.MovieHomeCategoryAdapterHolder(view);
+        return new MovieHomeCategoryAdapterHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieHomeCategoryAdapter.MovieHomeCategoryAdapterHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MovieHomeCategoryAdapterHolder holder, int position) {
         Item item = listItem.get(position);
 
         String imageUrl = domainimage + "/" + item.getPoster_url();
         Picasso.get().load(imageUrl).into(holder.imvMovieItem);
 
-        holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+        holder.imvMovieItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

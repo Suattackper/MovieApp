@@ -4,6 +4,8 @@ package com.example.movieapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.widget.NestedScrollView;
@@ -20,12 +22,21 @@ public final class FragmentWatchListBinding implements ViewBinding {
   private final NestedScrollView rootView;
 
   @NonNull
-  public final RecyclerView rcvMovieList;
+  public final LinearLayout layoutlist;
+
+  @NonNull
+  public final RecyclerView rcvWatchList;
+
+  @NonNull
+  public final TextView tvWatchList;
 
   private FragmentWatchListBinding(@NonNull NestedScrollView rootView,
-      @NonNull RecyclerView rcvMovieList) {
+      @NonNull LinearLayout layoutlist, @NonNull RecyclerView rcvWatchList,
+      @NonNull TextView tvWatchList) {
     this.rootView = rootView;
-    this.rcvMovieList = rcvMovieList;
+    this.layoutlist = layoutlist;
+    this.rcvWatchList = rcvWatchList;
+    this.tvWatchList = tvWatchList;
   }
 
   @Override
@@ -55,13 +66,26 @@ public final class FragmentWatchListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.rcvMovieList;
-      RecyclerView rcvMovieList = ViewBindings.findChildViewById(rootView, id);
-      if (rcvMovieList == null) {
+      id = R.id.layoutlist;
+      LinearLayout layoutlist = ViewBindings.findChildViewById(rootView, id);
+      if (layoutlist == null) {
         break missingId;
       }
 
-      return new FragmentWatchListBinding((NestedScrollView) rootView, rcvMovieList);
+      id = R.id.rcvWatchList;
+      RecyclerView rcvWatchList = ViewBindings.findChildViewById(rootView, id);
+      if (rcvWatchList == null) {
+        break missingId;
+      }
+
+      id = R.id.tvWatchList;
+      TextView tvWatchList = ViewBindings.findChildViewById(rootView, id);
+      if (tvWatchList == null) {
+        break missingId;
+      }
+
+      return new FragmentWatchListBinding((NestedScrollView) rootView, layoutlist, rcvWatchList,
+          tvWatchList);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

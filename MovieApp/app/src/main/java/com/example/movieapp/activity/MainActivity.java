@@ -5,14 +5,10 @@ import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 
 import com.example.movieapp.R;
 import com.example.movieapp.databinding.ActivityMainBinding;
-import com.example.movieapp.fragment.DownloadFragment;
-import com.example.movieapp.fragment.EditAccountInfoFragment;
 import com.example.movieapp.fragment.HomeFragment;
 import com.example.movieapp.fragment.MoreFragment;
 import com.example.movieapp.fragment.SearchFragment;
@@ -30,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+
         replaceFragmentUI(new HomeFragment());
         addEventsOnClick();
 
@@ -46,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragmentUI(new SearchFragment());
             }
             else if (itemID == R.id.btnDownload) {
-                replaceFragmentUI(new DownloadFragment());
+                replaceFragmentUI(new WatchListFragment());
             }
             else if (itemID == R.id.btnMore) {
-                replaceFragmentUI(new WatchListFragment());
+                replaceFragmentUI(new MoreFragment());
             }
             return true;
         });
@@ -57,9 +55,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void replaceFragmentUI (Fragment fragment) {
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
+//        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frameLayout, fragment);
-        transaction.commitNow();
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

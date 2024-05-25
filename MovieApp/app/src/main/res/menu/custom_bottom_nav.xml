@@ -13,9 +13,9 @@
         android:icon="@drawable/rounded_search_24"/>
     <item
         android:id="@+id/btnDownload"
-        android:title="@string/download"
+        android:title="Watch List"
         android:iconTint="@color/white"
-        android:icon="@drawable/rounded_download_for_offline_24"/>
+        android:icon="@drawable/icon_watch_list"/>
     <item
         android:id="@+id/btnMore"
         android:title="@string/more"

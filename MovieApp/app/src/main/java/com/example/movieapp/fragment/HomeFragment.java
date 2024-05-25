@@ -1,6 +1,14 @@
 package com.example.movieapp.fragment;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -8,23 +16,20 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
-
 import com.example.movieapp.CategoryFragment;
+import com.example.movieapp.PlayMovieActivity;
 import com.example.movieapp.R;
 import com.example.movieapp.adapter.MovieHomeAdapter;
 import com.example.movieapp.adapter.MovieHomeCategoryAdapter;
-import com.example.movieapp.adapter.MovieSearchItemAdapter;
 import com.example.movieapp.api.ApiService;
 import com.example.movieapp.databinding.FragmentHomeBinding;
-import com.example.movieapp.databinding.FragmentSearchBinding;
+import com.example.movieapp.model.Account;
 import com.example.movieapp.model.Item;
+import com.example.movieapp.model.MovieDetail;
 import com.example.movieapp.model.MovieList;
 import com.example.movieapp.model.MovieSearch;
+import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +45,7 @@ import retrofit2.Response;
  */
 public class HomeFragment extends Fragment {
     FragmentHomeBinding binding;
+    Item item = new Item();
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -91,6 +97,17 @@ public class HomeFragment extends Fragment {
         addEvents();
         getData();
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear(); // Xóa tất cả dữ liệu trong SharedPreferences
+                editor.putString("accountid", "0");
+                editor.apply();
+            }
+        }).start();
+
         return view;
     }
 
@@ -98,65 +115,93 @@ public class HomeFragment extends Fragment {
         binding.btnPhimBo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Khởi tạo Fragment và truyền dữ liệu nếu cần
-                CategoryFragment fragment = new CategoryFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("category", "Phim bộ");
-                bundle.putString("danhsach", "phim-bo");
-                fragment.setArguments(bundle);
-
-                // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
-                FragmentManager manager = getActivity().getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
-                transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
-                transaction.commit();
+                phimBo();
+            }
+        });
+        binding.btbtvPhimBo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                phimBo();
             }
         });
         binding.btnPhimLe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Khởi tạo Fragment và truyền dữ liệu nếu cần
-                CategoryFragment fragment = new CategoryFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("category", "Phim lẻ");
-                bundle.putString("danhsach", "phim-le");
-                fragment.setArguments(bundle);
-
-                // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
-                FragmentManager manager = getActivity().getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
-                transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
-                transaction.commit();
+                phimLe();
+            }
+        });
+        binding.btbtvPhimLe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                phimLe();
             }
         });
         binding.btnTVShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Khởi tạo Fragment và truyền dữ liệu nếu cần
-                CategoryFragment fragment = new CategoryFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("category", "TVShows");
-                bundle.putString("danhsach", "tv-shows");
-                fragment.setArguments(bundle);
-
-                // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
-                FragmentManager manager = getActivity().getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
-                transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
-                transaction.commit();
+                tvShows();
+            }
+        });
+        binding.btbtvTVShows.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvShows();
             }
         });
         binding.btnAnime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Khởi tạo Fragment và truyền dữ liệu nếu cần
-                CategoryFragment fragment = new CategoryFragment();
+                anime();
+            }
+        });
+        binding.btbtvAnime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                anime();
+            }
+        });
+        binding.imvUserAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khởi tạo Fragment
+                MoreFragment fragment = new MoreFragment();
+
+                // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
+                transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
+                transaction.commit();
+            }
+        });
+        binding.btnMyList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khởi tạo Fragment
+                WatchListFragment fragment = new WatchListFragment();
+
+                // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
+                transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
+                transaction.commit();
+            }
+        });
+        binding.btnInfoMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(item.getSlug()==null) {
+                    Toast.makeText(getContext(), "Vui lòng đợi tải dữ liệu hoàn thành!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(item.getSlug().equals("")) {
+                    Toast.makeText(getContext(), "Dữ liệu có vấn đề!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                MovieDetailFragment fragment = new MovieDetailFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("category", "Anime");
-                bundle.putString("danhsach", "hoat-hinh");
+                bundle.putString("slug", item.getSlug());
                 fragment.setArguments(bundle);
 
                 // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
@@ -167,14 +212,137 @@ public class HomeFragment extends Fragment {
                 transaction.commit();
             }
         });
+        binding.playBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(item.getSlug()==null) {
+                    Toast.makeText(getContext(), "Vui lòng đợi tải dữ liệu hoàn thành!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(item.getSlug().equals("")) {
+                    Toast.makeText(getContext(), "Dữ liệu có vấn đề!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                ApiService.apiService.getMovieBySlug(item.getSlug()).enqueue(new Callback<MovieDetail>() {
+                    @Override
+                    public void onResponse(Call<MovieDetail> call, Response<MovieDetail> response) {
+                        if (response.isSuccessful()) {
+                            MovieDetail moviedetail = response.body();
+                            Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
+                            intent.putExtra("m3u8", moviedetail.getEpisodes().get(0).getServer_data().get(0).getLink_m3u8());
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(getContext(), "Có lỗi xảy raz", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<MovieDetail> call, Throwable throwable) {
+                        Toast.makeText(getContext(), "Có lỗi xảy razz", Toast.LENGTH_SHORT).show();
+                        getActivity().onBackPressed();
+                    }
+                });
+            }
+        });
+    }
+
+    private void anime() {
+        // Khởi tạo Fragment và truyền dữ liệu nếu cần
+        CategoryFragment fragment = new CategoryFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("category", "Anime");
+        bundle.putString("danhsach", "hoat-hinh");
+        fragment.setArguments(bundle);
+
+        // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
+        transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
+        transaction.commit();
+    }
+
+    private void tvShows() {
+        // Khởi tạo Fragment và truyền dữ liệu nếu cần
+        CategoryFragment fragment = new CategoryFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("category", "TVShows");
+        bundle.putString("danhsach", "tv-shows");
+        fragment.setArguments(bundle);
+
+        // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
+        transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
+        transaction.commit();
+    }
+
+    private void phimLe() {
+        // Khởi tạo Fragment và truyền dữ liệu nếu cần
+        CategoryFragment fragment = new CategoryFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("category", "Phim lẻ");
+        bundle.putString("danhsach", "phim-le");
+        fragment.setArguments(bundle);
+
+        // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
+        transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
+        transaction.commit();
+    }
+
+    private void phimBo() {
+        // Khởi tạo Fragment và truyền dữ liệu nếu cần
+        CategoryFragment fragment = new CategoryFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("category", "Phim bộ");
+        bundle.putString("danhsach", "phim-bo");
+        fragment.setArguments(bundle);
+
+        // Truy cập FragmentManager từ FragmentActivity hoặc AppCompatActivity và thực hiện giao dịch
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
+        transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
+        transaction.commit();
     }
 
     private void getData() {
-        getlistnewupdate(binding.rcvPhimMoiCatNhat);
-        getlistcategory("phim-le",binding.rcvPhimLe);
-        getlistcategory("phim-bo",binding.rcvPhimBo);
-        getlistcategory("tv-shows",binding.rcvTVShow);
-        getlistcategory("hoat-hinh",binding.rcvAnime);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getlistnewupdate(binding.rcvPhimMoiCatNhat);
+            }
+        }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getlistcategory("phim-le",binding.rcvPhimLe);
+            }
+        }).start();new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getlistcategory("phim-bo",binding.rcvPhimBo);
+            }
+        }).start();new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getlistcategory("tv-shows",binding.rcvTVShow);
+            }
+        }).start();new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getlistcategory("hoat-hinh",binding.rcvAnime);
+            }
+        }).start();
+//        getlistnewupdate(binding.rcvPhimMoiCatNhat);
+//        getlistcategory("phim-le",binding.rcvPhimLe);
+//        getlistcategory("phim-bo",binding.rcvPhimBo);
+//        getlistcategory("tv-shows",binding.rcvTVShow);
+//        getlistcategory("hoat-hinh",binding.rcvAnime);
     }
 
     private void getlistnewupdate(RecyclerView rcv) {
@@ -184,6 +352,10 @@ public class HomeFragment extends Fragment {
                 if (response.isSuccessful()) {
                     try {
                         MovieList movielist = response.body();
+                        item = movielist.getItems().get(0);
+
+                        String imageUrl = item.getThumb_url();
+                        Picasso.get().load(imageUrl).into(binding.imvBanner);
 
                         LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
 
@@ -196,12 +368,12 @@ public class HomeFragment extends Fragment {
                         Log.e("HomeFragment", e.getMessage());
                     }
                 } else {
-                    Toast.makeText(getContext(), "Có lỗi xảy ra", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Có lỗi xảy rafff", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
             public void onFailure(Call<MovieList> call, Throwable throwable) {
-                Toast.makeText(getContext(), "Có lỗi xảy raa", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Có lỗi xảy raafff", Toast.LENGTH_SHORT).show();
             }
         });
     }

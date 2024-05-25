@@ -36,6 +36,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\activity_welcome_screen.xml"
     },
     {
+        "merged": "com.example.movieapp-mergeDebugResources-46:/layout/fragment_movie_detail.xml",
+        "source": "com.example.movieapp-main-49:/layout/fragment_movie_detail.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\layout_item_movie_detail_trailers.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\layout_item_movie_detail_trailers.xml"
     },
@@ -68,24 +72,24 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_download.xml"
     },
     {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_list_playing_movie_home.xml",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_list_playing_movie_home.xml"
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\movie_image_item.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\movie_image_item.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_images.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_images.xml"
     },
     {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\movie_image_item.xml",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\movie_image_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_cast_movies.xml",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_cast_movies.xml"
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_list_playing_movie_home.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_list_playing_movie_home.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_cast_t_v_shows.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_cast_t_v_shows.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_cast_movies.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_cast_movies.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\item_view_cast.xml",
@@ -100,12 +104,12 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\activity_register.xml"
     },
     {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\layout_item_movie_home_img.xml",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\layout_item_movie_home_img.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\movie_imagengang_item.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\movie_imagengang_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\layout_item_movie_home_img.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\layout_item_movie_home_img.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_trailer.xml",
@@ -124,12 +128,16 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_movie_detail.xml"
     },
     {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_cast_detail.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_cast_detail.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_similar.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_similar.xml"
     },
     {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_cast_detail.xml",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_cast_detail.xml"
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\movie_imagengangwatchlist_item.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\movie_imagengangwatchlist_item.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\layout_item_movie_home.xml",
@@ -146,10 +154,6 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_movie_playing.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_movie_playing.xml"
-    },
-    {
-        "merged": "com.example.movieapp-mergeDebugResources-46:/layout/layout_item_movie_detail_trailers.xml",
-        "source": "com.example.movieapp-main-49:/layout/layout_item_movie_detail_trailers.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-46:\\layout\\fragment_delete_download.xml",

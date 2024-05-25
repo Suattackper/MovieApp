@@ -1,30 +1,29 @@
 const express = require("express");
-const dotenv = require("dotenv");
-
-const body_parser = require("body-parser");
-const mongoose = require("mongoose");
-const authRoute = require("./routes/auth.route");
-
-
+const cors = require("cors");
 const app = express();
+const mongoose = require("mongoose");
+const morgan = require("morgan");
+const helmet = require("helmet");
+const body_parser = require("body-parser");
+
+//khởi động server: npm run start
+
+//CONNECT DATABASE
+
+const db = require("./Api/db");
+db.connectDB();
+
+//mvc----------------------------------------------------------------
 app.use(body_parser.json());
 app.use(express.json());
-dotenv.config();
- 
-// route -  authentication
-app.use("/api", authRoute);
+app.use(helmet());
+app.use(cors());
+app.use(morgan("common"));
 
+//movie app ----------------------------------------------------------------
+const WatchListRoute = require("./Api/routes/watchlist");
+app.use("/watchlist",WatchListRoute);
 
-
-const PORT = process.env.PORT || 3000;
-// connect db
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => {
-    console.log("Database is connected");
-  })
-  .catch((error) => console.log(error));
-
-app.listen(PORT, () => {
-  console.log("Server is running");
+app.listen(3000, () => {
+    console.log("Server is running http://localhost:3000");
 });

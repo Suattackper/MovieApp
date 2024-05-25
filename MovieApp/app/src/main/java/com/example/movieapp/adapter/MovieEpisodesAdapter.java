@@ -2,11 +2,9 @@ package com.example.movieapp.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,10 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.movieapp.PlayMovieActivity;
 import com.example.movieapp.R;
-import com.example.movieapp.fragment.MovieDetailFragment;
-import com.example.movieapp.fragment.MoviePlayingFragment;
-import com.example.movieapp.model.Episode;
-import com.example.movieapp.model.Item;
 import com.example.movieapp.model.ServerData;
 
 import java.util.List;
@@ -37,13 +31,13 @@ public class MovieEpisodesAdapter extends RecyclerView.Adapter<MovieEpisodesAdap
 
     @NonNull
     @Override
-    public MovieEpisodesAdapter.MovieEpisodesAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MovieEpisodesAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_episode_item, parent, false);
-        return new MovieEpisodesAdapter.MovieEpisodesAdapterHolder(view);
+        return new MovieEpisodesAdapterHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieEpisodesAdapter.MovieEpisodesAdapterHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MovieEpisodesAdapterHolder holder, int position) {
         ServerData item = episodeList.get(position);
 
         holder.tvTapPhim.setText(String.valueOf(position+1));

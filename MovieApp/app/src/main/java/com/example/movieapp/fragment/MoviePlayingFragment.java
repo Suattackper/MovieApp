@@ -1,22 +1,18 @@
 package com.example.movieapp.fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.movieapp.R;
-import com.example.movieapp.databinding.FragmentMovieDetailBinding;
+import androidx.fragment.app.Fragment;
+
 import com.example.movieapp.databinding.FragmentMoviePlayingBinding;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.ui.PlayerView;
 
 /**
  * A simple {@link Fragment} subclass.

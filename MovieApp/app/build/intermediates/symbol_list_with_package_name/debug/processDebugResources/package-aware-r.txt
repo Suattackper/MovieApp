@@ -27,6 +27,8 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim dialog_delete_watchlist_in
+anim dialog_delete_watchlist_out
 anim fragment_fast_out_extra_slow_in
 anim linear_indeterminate_line1_head_interpolator
 anim linear_indeterminate_line1_tail_interpolator
@@ -3533,9 +3535,14 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btbtvAnime
+id btbtvPhimBo
+id btbtvPhimLe
+id btbtvTVShows
 id btnAnime
 id btnBookmark
 id btnCreateAcc
+id btnDelete
 id btnDownload
 id btnHome
 id btnInfoMovie
@@ -3555,6 +3562,7 @@ id btnTaiTapPhim
 id btnTapPhim
 id btn_cancel
 id btn_send
+id btn_xacnhan
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3794,6 +3802,7 @@ id jumpToStart
 id labeled
 id layout
 id layoutXemTapPhim
+id layoutlist
 id layoutsingle
 id left
 id leftToRight
@@ -3961,7 +3970,6 @@ id rcvImgMovieDetailList_more
 id rcvListMovieSimilar_More
 id rcvMovieCateList
 id rcvMovieCateList_Home
-id rcvMovieList
 id rcvPhimBo
 id rcvPhimLe
 id rcvPhimMoiCatNhat
@@ -3969,6 +3977,7 @@ id rcvPlayingMovieList
 id rcvSimilar
 id rcvTVShow
 id rcvTrailerMovie_More
+id rcvWatchList
 id rectangles
 id report_drawn
 id restart
@@ -4128,7 +4137,7 @@ id tvPhimLe
 id tvPhimMoiCatNhat
 id tvSeeAll
 id tvSimilar
-id tvTCShow
+id tvTVShows
 id tvTapPhim
 id tvTime
 id tvTitle
@@ -4139,6 +4148,7 @@ id tvTrailerDate
 id tvTrailerTitle
 id tvTypeMovie
 id tvUserName
+id tvWatchList
 id tvXemTapPhim
 id txtCreateAcc
 id txtForgotPass
@@ -4377,6 +4387,7 @@ layout movie_episode_item
 layout movie_image_item
 layout movie_imagedoc_item
 layout movie_imagengang_item
+layout movie_imagengangwatchlist_item
 layout movie_title_category
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

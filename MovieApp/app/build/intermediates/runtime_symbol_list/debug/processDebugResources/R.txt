@@ -26,6 +26,8 @@ int anim design_bottom_sheet_slide_in 0x7f010018
 int anim design_bottom_sheet_slide_out 0x7f010019
 int anim design_snackbar_in 0x7f01001a
 int anim design_snackbar_out 0x7f01001b
+int anim dialog_delete_watchlist_in 0x7f01002c
+int anim dialog_delete_watchlist_out 0x7f01002d
 int anim fragment_fast_out_extra_slow_in 0x7f01001c
 int anim linear_indeterminate_line1_head_interpolator 0x7f01001d
 int anim linear_indeterminate_line1_tail_interpolator 0x7f01001e
@@ -3532,9 +3534,14 @@ int id bounce 0x7f0a0068
 int id bounceBoth 0x7f0a0069
 int id bounceEnd 0x7f0a006a
 int id bounceStart 0x7f0a006b
+int id btbtvAnime 0x7f0a02eb
+int id btbtvPhimBo 0x7f0a02ec
+int id btbtvPhimLe 0x7f0a02ed
+int id btbtvTVShows 0x7f0a02ee
 int id btnAnime 0x7f0a006c
 int id btnBookmark 0x7f0a006d
 int id btnCreateAcc 0x7f0a006e
+int id btnDelete 0x7f0a02ef
 int id btnDownload 0x7f0a006f
 int id btnHome 0x7f0a0070
 int id btnInfoMovie 0x7f0a0071
@@ -3554,6 +3561,7 @@ int id btnTaiTapPhim 0x7f0a007e
 int id btnTapPhim 0x7f0a007f
 int id btn_cancel 0x7f0a0080
 int id btn_send 0x7f0a0081
+int id btn_xacnhan 0x7f0a02f0
 int id buttonPanel 0x7f0a0082
 int id cache_measures 0x7f0a0083
 int id callMeasure 0x7f0a0084
@@ -3793,6 +3801,7 @@ int id jumpToStart 0x7f0a016d
 int id labeled 0x7f0a016e
 int id layout 0x7f0a016f
 int id layoutXemTapPhim 0x7f0a0170
+int id layoutlist 0x7f0a02f1
 int id layoutsingle 0x7f0a0171
 int id left 0x7f0a0172
 int id leftToRight 0x7f0a0173
@@ -3960,7 +3969,6 @@ int id rcvImgMovieDetailList_more 0x7f0a0214
 int id rcvListMovieSimilar_More 0x7f0a0215
 int id rcvMovieCateList 0x7f0a0216
 int id rcvMovieCateList_Home 0x7f0a0217
-int id rcvMovieList 0x7f0a0218
 int id rcvPhimBo 0x7f0a0219
 int id rcvPhimLe 0x7f0a021a
 int id rcvPhimMoiCatNhat 0x7f0a021b
@@ -3968,6 +3976,7 @@ int id rcvPlayingMovieList 0x7f0a021c
 int id rcvSimilar 0x7f0a021d
 int id rcvTVShow 0x7f0a021e
 int id rcvTrailerMovie_More 0x7f0a021f
+int id rcvWatchList 0x7f0a02f2
 int id rectangles 0x7f0a0220
 int id report_drawn 0x7f0a0221
 int id restart 0x7f0a0222
@@ -4127,7 +4136,7 @@ int id tvPhimLe 0x7f0a02bb
 int id tvPhimMoiCatNhat 0x7f0a02bc
 int id tvSeeAll 0x7f0a02bd
 int id tvSimilar 0x7f0a02be
-int id tvTCShow 0x7f0a02bf
+int id tvTVShows 0x7f0a02f3
 int id tvTapPhim 0x7f0a02c0
 int id tvTime 0x7f0a02c1
 int id tvTitle 0x7f0a02c2
@@ -4138,6 +4147,7 @@ int id tvTrailerDate 0x7f0a02c6
 int id tvTrailerTitle 0x7f0a02c7
 int id tvTypeMovie 0x7f0a02c8
 int id tvUserName 0x7f0a02c9
+int id tvWatchList 0x7f0a02f4
 int id tvXemTapPhim 0x7f0a02ca
 int id txtCreateAcc 0x7f0a02cb
 int id txtForgotPass 0x7f0a02cc
@@ -4376,6 +4386,7 @@ int layout movie_episode_item 0x7f0d0071
 int layout movie_image_item 0x7f0d0072
 int layout movie_imagedoc_item 0x7f0d0073
 int layout movie_imagengang_item 0x7f0d0074
+int layout movie_imagengangwatchlist_item 0x7f0d00a9
 int layout movie_title_category 0x7f0d0075
 int layout mtrl_alert_dialog 0x7f0d0076
 int layout mtrl_alert_dialog_actions 0x7f0d0077

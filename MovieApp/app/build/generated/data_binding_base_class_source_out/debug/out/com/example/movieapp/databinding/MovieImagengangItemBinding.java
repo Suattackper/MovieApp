@@ -24,16 +24,17 @@ public final class MovieImagengangItemBinding implements ViewBinding {
   public final ImageView imvMovieItem;
 
   @NonNull
-  public final LinearLayout itemLayout;
+  public final LinearLayout lnMovieInfo;
 
   @NonNull
   public final TextView tvName;
 
   private MovieImagengangItemBinding(@NonNull LinearLayout rootView,
-      @NonNull ImageView imvMovieItem, @NonNull LinearLayout itemLayout, @NonNull TextView tvName) {
+      @NonNull ImageView imvMovieItem, @NonNull LinearLayout lnMovieInfo,
+      @NonNull TextView tvName) {
     this.rootView = rootView;
     this.imvMovieItem = imvMovieItem;
-    this.itemLayout = itemLayout;
+    this.lnMovieInfo = lnMovieInfo;
     this.tvName = tvName;
   }
 
@@ -70,7 +71,11 @@ public final class MovieImagengangItemBinding implements ViewBinding {
         break missingId;
       }
 
-      LinearLayout itemLayout = (LinearLayout) rootView;
+      id = R.id.lnMovieInfo;
+      LinearLayout lnMovieInfo = ViewBindings.findChildViewById(rootView, id);
+      if (lnMovieInfo == null) {
+        break missingId;
+      }
 
       id = R.id.tvName;
       TextView tvName = ViewBindings.findChildViewById(rootView, id);
@@ -78,7 +83,7 @@ public final class MovieImagengangItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new MovieImagengangItemBinding((LinearLayout) rootView, imvMovieItem, itemLayout,
+      return new MovieImagengangItemBinding((LinearLayout) rootView, imvMovieItem, lnMovieInfo,
           tvName);
     }
     String missingId = rootView.getResources().getResourceName(id);

@@ -6,6 +6,9 @@ public class MovieDetail {
     private Movie movie;
     private List<Episode> episodes;
 
+    public MovieDetail() {
+    }
+
     public boolean isStatus() {
         return status;
     }

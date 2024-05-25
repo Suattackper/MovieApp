@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,13 +38,13 @@ public class MovieHomeCategoryNAdapter extends RecyclerView.Adapter<MovieHomeCat
     }
     @NonNull
     @Override
-    public MovieHomeCategoryNAdapter.MovieHomeCategoryNAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MovieHomeCategoryNAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_imagengang_item, parent, false);
-        return new MovieHomeCategoryNAdapter.MovieHomeCategoryNAdapterHolder(view);
+        return new MovieHomeCategoryNAdapterHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieHomeCategoryNAdapter.MovieHomeCategoryNAdapterHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MovieHomeCategoryNAdapterHolder holder, int position) {
         Item item = listItem.get(position);
 
         holder.tvName.setText(item.getName());
@@ -53,7 +52,7 @@ public class MovieHomeCategoryNAdapter extends RecyclerView.Adapter<MovieHomeCat
         String imageUrl = domainimage + "/" + item.getThumb_url();
         Picasso.get().load(imageUrl).into(holder.imvMovieItem);
 
-        holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+        holder.imvMovieItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -80,13 +79,13 @@ public class MovieHomeCategoryNAdapter extends RecyclerView.Adapter<MovieHomeCat
 
     public class MovieHomeCategoryNAdapterHolder extends RecyclerView.ViewHolder {
         ImageView imvMovieItem;
-        LinearLayout itemLayout;
+//        LinearLayout itemLayout;
         TextView tvName;
         public MovieHomeCategoryNAdapterHolder(@NonNull View itemView) {
             super(itemView);
             imvMovieItem = itemView.findViewById(R.id.imvMovieItem);
             tvName = itemView.findViewById(R.id.tvName);
-            itemLayout = itemView.findViewById(R.id.itemLayout);
+//            itemLayout = itemView.findViewById(R.id.itemLayout);
 
         }
     }

@@ -1,29 +1,22 @@
 package com.example.movieapp.fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.movieapp.R;
-import com.example.movieapp.adapter.MovieImageCategoryAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.movieapp.adapter.MovieSearchItemAdapter;
 import com.example.movieapp.api.ApiService;
 import com.example.movieapp.databinding.FragmentSearchBinding;
-import com.example.movieapp.model.Item;
 import com.example.movieapp.model.MovieSearch;
-import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -98,7 +91,7 @@ public class SearchFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(binding.editSearch.getText()!=null){
+                if(!binding.editSearch.getText().toString().equals("")){
                     ApiService.apiService.getMovieSearch(binding.editSearch.getText().toString(),10).enqueue(new Callback<MovieSearch>() {
                         @Override
                         public void onResponse(Call<MovieSearch> call, Response<MovieSearch> response) {

@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/imgLayoutBannerTop"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -93,7 +93,7 @@
                     android:layout_marginHorizontal="10dp"
                     android:contentDescription="@string/bookmark"
                     android:gravity="center"
-                    android:src="@drawable/rounded_bookmarks_24"
+                    android:src="@drawable/rounded_add_24"
                     app:tint="@color/netflix_red" />
 
                 <ImageView
@@ -124,7 +124,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:textColor="@color/slate_300"
                     android:textSize="15sp"
-                    android:text="07 Agu 202307" />
+                    android:text=" " />
 
                 <TextView
                     android:id="@+id/tvTypeMovie"
