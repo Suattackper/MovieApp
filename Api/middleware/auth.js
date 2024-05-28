@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 module.exports = async function (req, res, next) {
-  const token = req.header("Authorization");
+  const token = req.headers.authorization;
 
   if (!token) {
     return res.status(401).json({
@@ -9,8 +9,11 @@ module.exports = async function (req, res, next) {
     });
   }
 
+  // Bearer 
+  const accessToken = token.split(" ")[1];
+
   try {
-    await jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+    await jwt.verify(accessToken, process.env.SECRET_KEY, (err, decoded) => {
       if (err) {
         res.status(401).json({
           msg: "Invalid token",

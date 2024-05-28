@@ -9,36 +9,28 @@ exports.registered = async (req, res) => {
     const { email, phone, password } = req.body;
 
     // checking if it already exists in db
-    const existingEmail = await AccountModel.findOne({ email });
-    const existingPhone = await AccountModel.findOne({ phone });
+    const existAccount = await AccountModel.findOne({ email });
 
-    if (existingEmail || existingPhone) {
-      return res.status(400).json({ msg: "Email or Phone number already exists" });
+    if (existAccount) {
+      return res.status(400).json({ message: "Email address already exists" });
     }
 
     // hash
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password, salt);
 
-    let account = new AccountModel({
+    // create new account
+    const newAccount = await new AccountModel({
       email,
       phone,
       password: hash,
     });
 
-    account = await account.save();
+    const account = await newAccount.save();
 
-    const payload = {
-      id: account._id,
-    };
-
-    jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "1h" }, (error, token) => {
-      if (error) {
-        throw error;
-      }
-      res.status(200).json({ success: true, token: token});
-    });
+    res.status(200).json({ success: true, message: "Create successfully", account: account });
   } catch (error) {
+    console.log(error.message);
     res.status(500).json({ error: error.message });
   }
 };
@@ -50,58 +42,93 @@ exports.login = async (req, res) => {
 
     // check email if it exists
     if (!account) {
-      res.status(404).json("Invalid email! Please enter again");
+      return res.status(404).json("Invalid email! Please enter again");
     }
 
     const validPassword = await bcrypt.compare(req.body.password, account.password);
 
     if (!validPassword) {
-      res.status(404).json("Invalid password! Please enter again");
+      return res
+        .status(401)
+        .json({ success: false, message: "Invalid password! Please enter again" });
     }
 
-    // login success and create token
+    // login success
     if (account && validPassword) {
-      const payload = {
-        account: {
-          id: account._id,
-        },
-      };
+      const accessToken = generateAccessToken(account);
+      const refreshToken = generateRefreshToken(account);
 
-      jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "1h" }, (error, token) => {
-        if (error) {
-          throw error;
-        }
+      await RefreshToken.create({ token: refreshToken, account_id: account.id });
 
-        //destructuring
-        const {password, ...others} = account._doc;
+      const { password, ...others } = account._doc;
 
-        res.status(200).json({
-          success: true,
-          message: "Account logged in successfully",
-          token: token,
-          account: {...others},
-        });
+      return res.status(200).json({
+        success: true,
+        message: "Logged in successfully",
+        accessToken: accessToken,
+        refreshToken: refreshToken,
+        ...others,
       });
     }
   } catch (error) {
     console.log(error.message);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: "Internal Server Error!!",
     });
   }
 };
 
+// refresh token
+exports.requestRefreshToken = async (req, res) => {
+  const { refreshToken } = req.body;
+
+  try {
+    const refreshTokenDoc = await RefreshToken.findOne({ token: refreshToken });
+
+    if (!refreshTokenDoc) {
+      return res.status(403).json({ success: false, message: "Invalid refresh token or expired" });
+    }
+
+    jwt.verify(refreshToken, process.env.REFRESH_KEY, async (error, decoded) => {
+      if (error) {
+        const deleteResult = await RefreshToken.deleteOne({ token: refreshToken });
+
+        if (deleteResult.deletedCount === 0) {
+          console.warn("Refresh token not found for deletion:", refreshToken);
+        }
+        return res
+          .status(403)
+          .json({ success: false, message: "Invalid refresh token or expired" });
+      }
+
+      const account = await AccountModel.findById(decoded.account.id);
+
+      if (!account) {
+        return res.status(404).json({ success: false, message: "Cannot find any account" });
+      }
+
+      const newAccessToken = generateAccessToken(account);
+      const newRefreshToken = generateRefreshToken(account);
+      await RefreshToken.findByIdAndUpdate(refreshTokenDoc.id, { token: newRefreshToken });
+
+      return res.status(200).json({ accessToken: newAccessToken, refreshToken: newRefreshToken });
+    });
+  } catch (error) {
+    console.log(error.message);
+
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
 // get account by id
 exports.getAccount = async (req, res) => {
   try {
-
     const account = await AccountModel.findById(req.account.id).select("-password");
-            res.status(200).json({
-                success: true,
-                account: account,
-            });
-    
+    res.status(200).json({
+      success: true,
+      account: account,
+    });
   } catch (error) {
     console.log(error.message);
     res.status(500).json({
