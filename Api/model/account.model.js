@@ -5,23 +5,28 @@ const AccountSchema = new mongoose.Schema(
     email: {
       type: String,
       unique: true,
-      require: true
+      required: true,
     },
 
     phone: {
       type: String,
-      unique: true,
-      require: true
+      required: true,
     },
 
     password: {
       type: String,
-      require: true,
+      required: true,
+    },
+
+    imageUrl: {
+      type: String,
+      required: false,
+      default:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png",
     },
   },
-  {timestamps: true}
+  { timestamps: true }
 );
-
 
 const AccountModel = mongoose.model("account", AccountSchema);
 
