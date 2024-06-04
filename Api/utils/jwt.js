@@ -8,7 +8,7 @@ exports.generateAccessToken = (account) => {
         },
       };
     
-      return jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "10" });
+      return jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "50h" });
 };
 
 exports.generateRefreshToken = (account) => {

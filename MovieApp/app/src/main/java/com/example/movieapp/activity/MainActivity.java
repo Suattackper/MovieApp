@@ -1,6 +1,7 @@
 package com.example.movieapp.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        replaceFragmentUI(new HomeFragment());
+        replaceFragmentUI(new MoreFragment());
         addEventsOnClick();
 
     }
@@ -49,10 +50,12 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragmentUI(new DownloadFragment());
             }
             else if (itemID == R.id.btnMore) {
-                replaceFragmentUI(new WatchListFragment());
+                replaceFragmentUI(new MoreFragment());
             }
             return true;
         });
+
+
 
     }
 
@@ -62,4 +65,5 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.frameLayout, fragment);
         transaction.commitNow();
     }
+
 }

@@ -121,6 +121,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/email"
+                        android:text="a@gmail.oom"
                         android:inputType="textEmailAddress" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -137,6 +138,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/phone"
+                        android:text="0988788699"
                         android:inputType="phone|number" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -154,6 +156,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
+                        android:text="123456"
                         android:inputType="textPassword" />
 
                 </com.google.android.material.textfield.TextInputLayout>

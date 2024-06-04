@@ -11,15 +11,15 @@ public class RegisResponse {
     @SerializedName("message")
     private String message;
 
-    @SerializedName("accessToken")
+//    @SerializedName("accessToken")
+//
+//    private String accessToken;
 
-    private String accessToken;
-
-    public RegisResponse(boolean success, int code, String message, String accessToken) {
+    public RegisResponse(boolean success, int code, String message) {
         this.success = success;
         this.code = code;
         this.message = message;
-        this.accessToken = accessToken;
+//        this.accessToken = accessToken;
     }
 
     public boolean isSuccess() {
@@ -46,11 +46,11 @@ public class RegisResponse {
         this.message = message;
     }
 
-    public String getAccessToken() {
-        return accessToken;
-    }
-
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
-    }
+//    public String getAccessToken() {
+//        return accessToken;
+//    }
+//
+//    public void setAccessToken(String accessToken) {
+//        this.accessToken = accessToken;
+//    }
 }

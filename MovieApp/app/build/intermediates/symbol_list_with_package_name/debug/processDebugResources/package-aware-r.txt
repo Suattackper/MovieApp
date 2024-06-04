@@ -3375,6 +3375,7 @@ drawable placeholder_genre_background_rounded
 drawable radio_flat_selector
 drawable radio_flat_text_selector
 drawable round_arrow_circle_down_24
+drawable round_check_circle_24
 drawable round_close_24
 drawable round_cloud_download_24
 drawable round_delete_outline_24
@@ -3534,6 +3535,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btnAnime
+id btnBackToLogin
 id btnBookmark
 id btnCreateAcc
 id btnDownload
@@ -3553,6 +3555,7 @@ id btnSignup
 id btnTVShow
 id btnTaiTapPhim
 id btnTapPhim
+id btnVerify
 id btn_cancel
 id btn_send
 id buttonPanel
@@ -3583,6 +3586,7 @@ id clockwise
 id closest
 id collapseActionView
 id compress
+id confirmPassword
 id confirm_button
 id constraint
 id container
@@ -3778,6 +3782,7 @@ id imvMovieItem
 id imvMovieItem_Home
 id imvMovieSimilar
 id imvPlayTrailerVideoBtn
+id imvSuccessIcon
 id imvUserAvatar
 id included
 id indeterminate
@@ -3894,6 +3899,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newPassword
 id noScroll
 id noState
 id none
@@ -4115,7 +4121,9 @@ id tvDanhSachTap
 id tvDirector
 id tvGenre
 id tvGenreMovie
+id tvIntro
 id tvItemCate
+id tvLabel
 id tvLogout
 id tvLogoutDesc
 id tvMovieDate
@@ -4128,6 +4136,7 @@ id tvPhimLe
 id tvPhimMoiCatNhat
 id tvSeeAll
 id tvSimilar
+id tvSuccessDesc
 id tvTCShow
 id tvTapPhim
 id tvTime
@@ -4291,8 +4300,11 @@ layout abc_tooltip
 layout activity_forgot_password
 layout activity_login
 layout activity_main
+layout activity_otpactivity
 layout activity_play_movie
 layout activity_register
+layout activity_reset_pass_success
+layout activity_reset_password
 layout activity_splash_screen
 layout activity_welcome_screen
 layout change_password_dialog
@@ -4332,6 +4344,7 @@ layout fragment_delete_download
 layout fragment_download
 layout fragment_download_dialog
 layout fragment_edit_account_info
+layout fragment_forgotpass
 layout fragment_home
 layout fragment_images
 layout fragment_list_playing_movie_home
@@ -4340,6 +4353,9 @@ layout fragment_logout_dialog
 layout fragment_more
 layout fragment_movie_detail
 layout fragment_movie_playing
+layout fragment_o_t_p_verify
+layout fragment_reset_password
+layout fragment_reset_password_sucess
 layout fragment_search
 layout fragment_similar
 layout fragment_trailer
@@ -4472,6 +4488,7 @@ string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
 string back_button
+string back_to_login
 string biography
 string birthday
 string bookmark
@@ -4495,9 +4512,11 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
 string confirm_log_out
+string confirm_password
 string continue_watching
 string create_new
 string create_new_acc
+string create_new_pass
 string delete
 string delete_message
 string download
@@ -4566,7 +4585,9 @@ string exo_track_unknown
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string forget_password
 string forgot_pass
+string forgot_pass_intro
 string have_acc
 string hello_blank_fragment
 string hide
@@ -4693,11 +4714,17 @@ string mtrl_timepicker_confirm
 string my_list
 string netflix_logo
 string netflix_series
+string new_password
 string new_to
+string next
 string notification
 string now_playing_movies
+string otp_code
+string otp_verify
 string password
 string password_toggle_content_description
+string password_updated
+string password_updated_success_message
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
@@ -4710,6 +4737,7 @@ string read_more
 string regis_btn
 string register
 string register_intro
+string resend_code
 string save_btn
 string search
 string search_menu_title
@@ -4735,6 +4763,8 @@ string title_ct_release
 string trailer_title
 string trailers
 string tv_series
+string update
+string verify
 string watch_list
 string welcome_back
 string yes

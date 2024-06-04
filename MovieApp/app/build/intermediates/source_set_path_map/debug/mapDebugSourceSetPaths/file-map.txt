@@ -41,10 +41,10 @@ com.example.movieapp-jetified-activity-ktx-1.8.0-39 C:\Users\ACER\.gradle\caches
 com.example.movieapp-jetified-emoji2-views-helper-1.2.0-40 C:\Users\ACER\.gradle\caches\transforms-3\d30b5b264e708520c11776f0f4d035e8\transformed\jetified-emoji2-views-helper-1.2.0\res
 com.example.movieapp-lifecycle-runtime-2.6.2-41 C:\Users\ACER\.gradle\caches\transforms-3\e0c4b37f0f51fb9969e5d6058c84746c\transformed\lifecycle-runtime-2.6.2\res
 com.example.movieapp-coordinatorlayout-1.1.0-42 C:\Users\ACER\.gradle\caches\transforms-3\f4c90e9a19703a8b318b34eaf2453cfe\transformed\coordinatorlayout-1.1.0\res
-com.example.movieapp-pngs-43 D:\Android\MovieApp\MovieApp\app\build\generated\res\pngs\debug
-com.example.movieapp-resValues-44 D:\Android\MovieApp\MovieApp\app\build\generated\res\resValues\debug
-com.example.movieapp-packageDebugResources-45 D:\Android\MovieApp\MovieApp\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.movieapp-packageDebugResources-46 D:\Android\MovieApp\MovieApp\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.movieapp-debug-47 D:\Android\MovieApp\MovieApp\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.movieapp-debug-48 D:\Android\MovieApp\MovieApp\app\src\debug\res
-com.example.movieapp-main-49 D:\Android\MovieApp\MovieApp\app\src\main\res
+com.example.movieapp-pngs-43 C:\Users\ACER\Desktop\MovieApp\MovieApp\app\build\generated\res\pngs\debug
+com.example.movieapp-resValues-44 C:\Users\ACER\Desktop\MovieApp\MovieApp\app\build\generated\res\resValues\debug
+com.example.movieapp-packageDebugResources-45 C:\Users\ACER\Desktop\MovieApp\MovieApp\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.movieapp-packageDebugResources-46 C:\Users\ACER\Desktop\MovieApp\MovieApp\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.movieapp-debug-47 C:\Users\ACER\Desktop\MovieApp\MovieApp\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.movieapp-debug-48 C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\debug\res
+com.example.movieapp-main-49 C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\res

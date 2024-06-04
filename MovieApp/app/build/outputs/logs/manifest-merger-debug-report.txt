@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:2:1-57:12
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:2:1-71:12
 MERGED from [androidx.databinding:viewbinding:8.3.2] C:\Users\ACER\.gradle\caches\transforms-3\a13264df8df223f23e62075bbad7447a\transformed\jetified-viewbinding-8.3.2\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\ACER\.gradle\caches\transforms-3\b58ffaeadbbe5cd3fd3dc6f588074b22\transformed\material-1.10.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\ACER\.gradle\caches\transforms-3\0f9e0af6b76e30671c40a80cec0fa388\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -77,28 +77,38 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\ACER\.gradle\caches\transforms
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ACER\.gradle\caches\transforms-3\3162df0c02637a29174e3e9c547577d5\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\4c656ec7ce3b687aefcbec6e156dfaaf\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 	package
-		INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:5:5-67
 MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0] C:\Users\ACER\.gradle\caches\transforms-3\67b4dab1f736a129c141429ce8a4b36c\transformed\jetified-core-12.1.0\AndroidManifest.xml:7:5-67
 MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0] C:\Users\ACER\.gradle\caches\transforms-3\67b4dab1f736a129c141429ce8a4b36c\transformed\jetified-core-12.1.0\AndroidManifest.xml:7:5-67
 	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:6:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.19.1] C:\Users\ACER\.gradle\caches\transforms-3\8b2b62be07755da4c607eb02dc8c6d8c\transformed\jetified-exoplayer-core-2.19.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.19.1] C:\Users\ACER\.gradle\caches\transforms-3\8b2b62be07755da4c607eb02dc8c6d8c\transformed\jetified-exoplayer-core-2.19.1\AndroidManifest.xml:24:5-79
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0] C:\Users\ACER\.gradle\caches\transforms-3\67b4dab1f736a129c141429ce8a4b36c\transformed\jetified-core-12.1.0\AndroidManifest.xml:8:5-79
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0] C:\Users\ACER\.gradle\caches\transforms-3\67b4dab1f736a129c141429ce8a4b36c\transformed\jetified-core-12.1.0\AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.19.1] C:\Users\ACER\.gradle\caches\transforms-3\615d75e190839d7b73ea37f9d07453c6\transformed\jetified-exoplayer-common-2.19.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.19.1] C:\Users\ACER\.gradle\caches\transforms-3\615d75e190839d7b73ea37f9d07453c6\transformed\jetified-exoplayer-common-2.19.1\AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:6:5-78
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:7:5-78
 	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:6:22-75
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:7:22-75
 application
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:8:5-55:19
-INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:8:5-55:19
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:9:5-69:19
+INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:9:5-69:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\ACER\.gradle\caches\transforms-3\b58ffaeadbbe5cd3fd3dc6f588074b22\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\ACER\.gradle\caches\transforms-3\b58ffaeadbbe5cd3fd3dc6f588074b22\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\ACER\.gradle\caches\transforms-3\0f9e0af6b76e30671c40a80cec0fa388\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -122,103 +132,129 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ACER\.gradle\cache
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ACER\.gradle\caches\transforms-3\0739f7cc4466488944c9ba20417ebfee\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ACER\.gradle\caches\transforms-3\0739f7cc4466488944c9ba20417ebfee\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\transforms-3\31392ce50228ed628a92ddf35ad349bd\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:13:9-41
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:14:9-41
 	android:fullBackupContent
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:12:9-54
 	android:roundIcon
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:14:9-54
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:15:9-54
 	tools:targetApi
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:17:9-29
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:19:9-29
 	android:icon
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:12:9-43
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:16:9-46
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:17:9-46
 	android:dataExtractionRules
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:10:9-65
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:11:9-65
+	android:usesCleartextTraffic
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:18:9-44
+activity#com.example.movieapp.activity.OTPActivity
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:20:9-22:40
+	android:exported
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:22:13-37
+	android:name
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:21:13-49
+activity#com.example.movieapp.activity.ResetPassSuccessActivity
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:23:9-25:40
+	android:exported
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:24:13-62
+activity#com.example.movieapp.activity.ResetPasswordActivity
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:26:9-28:40
+	android:exported
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:27:13-59
+activity#com.example.movieapp.OTPVerifyActivity
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:29:9-31:40
+	android:exported
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:30:13-46
 activity#com.example.movieapp.PlayMovieActivity
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:18:9-23:64
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:32:9-37:64
 	android:label
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:22:13-62
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:36:13-62
 	android:exported
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:21:13-37
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:35:13-37
 	android:configChanges
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:20:13-74
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:34:13-74
 	android:theme
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:23:13-61
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:37:13-61
 	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:19:13-46
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:33:13-46
 activity#com.example.movieapp.activity.ForgotPasswordActivity
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:24:9-27:59
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:38:9-41:59
 	android:exported
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:26:13-37
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:40:13-37
 	android:theme
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:27:13-56
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:41:13-56
 	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:25:13-60
-activity#com.example.movieapp.activity.LoginActivity
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:28:9-31:59
-	android:exported
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:30:13-37
-	android:theme
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:31:13-56
-	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:29:13-51
-activity#com.example.movieapp.activity.RegisterActivity
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:32:9-35:59
-	android:exported
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:34:13-37
-	android:theme
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:35:13-56
-	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:33:13-54
-activity#com.example.movieapp.activity.WelcomeScreenActivity
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:36:9-39:59
-	android:exported
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:38:13-37
-	android:theme
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:39:13-56
-	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:37:13-59
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:39:13-60
 activity#com.example.movieapp.activity.MainActivity
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:40:9-50:20
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:42:9-45:59
 	android:exported
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:43:13-36
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:44:13-37
+	android:theme
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:45:13-56
+	android:name
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:43:13-50
+activity#com.example.movieapp.activity.RegisterActivity
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:46:9-49:59
+	android:exported
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:48:13-37
+	android:theme
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:49:13-56
+	android:name
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:47:13-54
+activity#com.example.movieapp.activity.WelcomeScreenActivity
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:50:9-53:59
+	android:exported
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:52:13-37
+	android:theme
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:53:13-56
+	android:name
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:51:13-59
+activity#com.example.movieapp.activity.LoginActivity
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:54:9-64:20
+	android:exported
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:57:13-36
 	android:configChanges
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:42:13-79
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:56:13-79
 	android:theme
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:44:13-56
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:58:13-56
 	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:41:13-50
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:55:13-51
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:45:13-49:29
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:59:13-63:29
 action#android.intent.action.MAIN
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:46:17-69
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:60:17-69
 	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:46:25-66
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:60:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:48:17-77
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:62:17-77
 	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:48:27-74
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:62:27-74
 activity#com.example.movieapp.activity.SplashScreenActivity
-ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:51:9-54:59
+ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:65:9-68:59
 	android:exported
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:53:13-37
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:67:13-37
 	android:theme
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:54:13-56
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:68:13-56
 	android:name
-		ADDED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:52:13-58
+		ADDED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml:66:13-58
 uses-sdk
-INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
-INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:8.3.2] C:\Users\ACER\.gradle\caches\transforms-3\a13264df8df223f23e62075bbad7447a\transformed\jetified-viewbinding-8.3.2\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:8.3.2] C:\Users\ACER\.gradle\caches\transforms-3\a13264df8df223f23e62075bbad7447a\transformed\jetified-viewbinding-8.3.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\ACER\.gradle\caches\transforms-3\b58ffaeadbbe5cd3fd3dc6f588074b22\transformed\material-1.10.0\AndroidManifest.xml:20:5-44
@@ -364,17 +400,9 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ACER\.gradle\caches
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\4c656ec7ce3b687aefcbec6e156dfaaf\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\4c656ec7ce3b687aefcbec6e156dfaaf\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
-		INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Android\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.android.exoplayer:exoplayer-core:2.19.1] C:\Users\ACER\.gradle\caches\transforms-3\8b2b62be07755da4c607eb02dc8c6d8c\transformed\jetified-exoplayer-core-2.19.1\AndroidManifest.xml:24:5-79
-MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0] C:\Users\ACER\.gradle\caches\transforms-3\67b4dab1f736a129c141429ce8a4b36c\transformed\jetified-core-12.1.0\AndroidManifest.xml:8:5-79
-MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0] C:\Users\ACER\.gradle\caches\transforms-3\67b4dab1f736a129c141429ce8a4b36c\transformed\jetified-core-12.1.0\AndroidManifest.xml:8:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.19.1] C:\Users\ACER\.gradle\caches\transforms-3\615d75e190839d7b73ea37f9d07453c6\transformed\jetified-exoplayer-common-2.19.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.19.1] C:\Users\ACER\.gradle\caches\transforms-3\615d75e190839d7b73ea37f9d07453c6\transformed\jetified-exoplayer-common-2.19.1\AndroidManifest.xml:24:5-79
-	android:name
-		ADDED from [com.google.android.exoplayer:exoplayer-core:2.19.1] C:\Users\ACER\.gradle\caches\transforms-3\8b2b62be07755da4c607eb02dc8c6d8c\transformed\jetified-exoplayer-core-2.19.1\AndroidManifest.xml:24:22-76
+		INJECTED from C:\Users\ACER\Desktop\MovieApp\MovieApp\app\src\main\AndroidManifest.xml
 provider#com.squareup.picasso.PicassoProvider
 ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\ACER\.gradle\caches\transforms-3\56b6786b128c1149e708d515e200fa36\transformed\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
 	android:authorities

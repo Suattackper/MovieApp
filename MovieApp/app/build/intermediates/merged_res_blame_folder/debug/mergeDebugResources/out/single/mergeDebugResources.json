@@ -4,12 +4,12 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\item_view_cast.xml"
     },
     {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_download.xml.flat",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_download.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\font_poppins_semibold.ttf.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\font\\poppins_semibold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_download.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_download.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_category.xml.flat",
@@ -26,6 +26,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\raw_netflix_logo_anim.json.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\raw\\netflix_logo_anim.json"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_reset_password_sucess.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_reset_password_sucess.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\menu_custom_bottom_nav.xml.flat",
@@ -68,6 +72,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\mipmap-anydpi\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_o_t_p_verify.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_o_t_p_verify.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_toggle_button_off.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\toggle_button_off.xml"
     },
@@ -78,6 +86,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_toggle_icon.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\toggle_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_forgotpass.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_forgotpass.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_book.png.flat",
@@ -98,6 +110,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_cancel_btn_background_v2.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\cancel_btn_background_v2.xml"
+    },
+    {
+        "merged": "com.example.movieapp-debug-47:/layout_activity_reset_pass_success.xml.flat",
+        "source": "com.example.movieapp-main-49:/layout/activity_reset_pass_success.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\mipmap-anydpi-v26_ic_logo_app_round.xml.flat",
@@ -174,6 +190,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_rounded_btn_bordered_genre.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\rounded_btn_bordered_genre.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_round_check_circle_24.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\round_check_circle_24.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_rounded_btn.xml.flat",
@@ -360,6 +380,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\mipmap-xxhdpi\\ic_logo_app_round.webp"
     },
     {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_reset_password.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_reset_password.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_ic_logo_app_foreground.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\ic_logo_app_foreground.xml"
     },
@@ -416,12 +440,12 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\drawable\\mountain_winter.png"
     },
     {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_movie_playing.xml.flat",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_movie_playing.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_movie_playing.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_movie_playing.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_cast_movies.xml.flat",
@@ -524,12 +548,12 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_trailer.xml.flat",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_trailer.xml"
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_activity_otpactivity.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\activity_otpactivity.xml"
     },
     {
-        "merged": "com.example.movieapp-debug-47:/layout_layout_item_movie_detail_trailers.xml.flat",
-        "source": "com.example.movieapp-main-49:/layout/layout_item_movie_detail_trailers.xml"
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_fragment_trailer.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\fragment_trailer.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_rounded_account_box_24.xml.flat",
@@ -546,6 +570,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_activity_reset_password.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\activity_reset_password.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\drawable_onboarding_background.png.flat",
@@ -594,6 +622,14 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_movie_title_category.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\movie_title_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_activity_reset_pass_success.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\activity_reset_pass_success.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\layout_activity_otpverify.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-49:\\layout\\activity_otpverify.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-47:\\font_googlesans_regular.ttf.flat",

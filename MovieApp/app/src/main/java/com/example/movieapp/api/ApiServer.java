@@ -1,4 +1,4 @@
-package com.example.apilogintest;
+package com.example.movieapp.api;
 
 import com.example.apilogintest.ForgotPass.ForgetResponse;
 import com.example.apilogintest.ForgotPass.ForgotRequest;
@@ -36,11 +36,11 @@ public interface ApiServer {
 
 
     @POST ("api/login") // Đường dẫn API đăng nhập
-     Call<LoginResponse> login(@Body AccountRes accountRes);
+     Call<com.example.apilogintest.LoginResponse> login(@Body com.example.apilogintest.LoginRequest accountRes);
 
 
 @POST ("api/registered") // Đường dẫn API đăng nhập
-Call<RegisResponse> register(@Body RegisterRes registerRes
+Call<com.example.apilogintest.RegisResponse> register(@Body com.example.apilogintest.RegisterRes registerRes
 
 );
 

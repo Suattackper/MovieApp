@@ -14,9 +14,9 @@ route.post("/registered", authController.registered);
 route.post("/login", authController.login);
 
 // POST - refresh 
-// route.post("/refresh", authController.requestRefreshToken);
+route.post("/refresh", authController.requestRefreshToken);
 
 // GET - user
-// route.get("/:id", auth, authController.getAccount);
+route.get("/:id", auth, authController.getAccount);
 
 module.exports = route;
